@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     // Unity Editor fields
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float baseSpeed = 1000f;
-    [SerializeField] private float lookSensitivity = 15f;
+    [SerializeField] private float lookSensitivity = 0.2f;
     [SerializeField] private float movementSmoothTime = 0.4f;
 
     // Private properties
@@ -30,10 +30,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Look
-        float targetHorizontalLook = lookSensitivity * lookInputX * Time.deltaTime;
+        float targetHorizontalLook = lookSensitivity * lookInputX;
         transform.Rotate(Vector3.up * targetHorizontalLook);
 
-        float targetVerticalLook = lookSensitivity * lookInputY * Time.deltaTime;
+        float targetVerticalLook = lookSensitivity * lookInputY;
         cameraRotationX -= targetVerticalLook;
         cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
         playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);

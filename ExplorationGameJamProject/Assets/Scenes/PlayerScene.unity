@@ -554,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 383188203}
   baseSpeed: 1000
-  lookSensitivity: 15
+  lookSensitivity: 0.2
   movementSmoothTime: 0.4
 --- !u!1 &1806280720
 GameObject:
