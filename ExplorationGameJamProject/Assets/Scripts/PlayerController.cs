@@ -7,8 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     // Unity Editor fields
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private LayerMask whatIsInteractable;
     [SerializeField] private float baseSpeed = 6f;
     [SerializeField] private float lookSensitivity = 0.2f;
+    [SerializeField] private float maxInteractDistance = 1f;
 
     // Private properties
     private float cameraRotationX;
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -44,6 +48,17 @@ public class PlayerController : MonoBehaviour
         float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
         Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
         characterController.Move(targetVelocity);
+    }
+
+    public void OnInteract()
+    {
+        Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
+        Ray ray = playerCamera.ViewportPointToRay(viewportCenterPoint);
+        if (Physics.Raycast(ray, out RaycastHit hit, maxInteractDistance, whatIsInteractable))
+        {
+            Debug.Log("Interacted with " + hit.transform.name);
+            Destroy(hit.transform.gameObject);
+        }
     }
 
     public void OnLook(InputValue value)
