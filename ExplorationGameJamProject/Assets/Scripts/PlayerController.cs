@@ -7,23 +7,21 @@ public class PlayerController : MonoBehaviour
 {
     // Unity Editor fields
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float baseSpeed = 1000f;
+    [SerializeField] private float baseSpeed = 6f;
     [SerializeField] private float lookSensitivity = 0.2f;
-    [SerializeField] private float movementSmoothTime = 0.4f;
 
     // Private properties
     private float cameraRotationX;
+    private CharacterController characterController;
     private float lookInputX;
     private float lookInputY;
     private float moveInputX;
     private float moveInputZ;
-    private Rigidbody rb;
-    private Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -45,7 +43,7 @@ public class PlayerController : MonoBehaviour
         float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
         float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
         Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothTime);
+        characterController.Move(targetVelocity);
     }
 
     public void OnLook(InputValue value)
