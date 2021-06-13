@@ -1,5 +1,5 @@
 {
-    "name": "ExplorationGameJamProject",
+    "name": "Action Map",
     "maps": [
         {
             "name": "Player",
@@ -160,6 +160,17 @@
                     "processors": "",
                     "groups": "Joystick",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ccfccf74-718a-41cc-bdfe-3751d9818e2a",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
