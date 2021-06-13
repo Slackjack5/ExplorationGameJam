@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     // Unity Editor fields
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float baseSpeed = 1000f;
-    [SerializeField] private float lookSensitivity = 100f;
+    [SerializeField] private float lookSensitivity = 15f;
     [SerializeField] private float movementSmoothTime = 0.4f;
 
     // Private properties
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         // Move
         float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
         float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
-        Vector3 targetVelocity = new Vector3(targetVelocityX, rb.velocity.y, targetVelocityZ);
+        Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothTime);
     }
 
