@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,23 +8,28 @@ public class PlayerController : MonoBehaviour
 {
     // Unity Editor fields
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float baseSpeed = 1000f;
+    [SerializeField] private LayerMask whatIsInteractable;
+    [SerializeField] private Material highlightMaterial;
+    [SerializeField] private float baseSpeed = 6f;
     [SerializeField] private float lookSensitivity = 0.2f;
-    [SerializeField] private float movementSmoothTime = 0.4f;
+    [SerializeField] private float maxInteractDistance = 1f;
 
     // Private properties
     private float cameraRotationX;
+    private CharacterController characterController;
+    private GameObject lastHighlightedObject;
     private float lookInputX;
     private float lookInputY;
     private float moveInputX;
     private float moveInputZ;
-    private Rigidbody rb;
-    private Vector3 velocity;
+    private Material originalMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -37,6 +43,16 @@ public class PlayerController : MonoBehaviour
         cameraRotationX -= targetVerticalLook;
         cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
         playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+
+        // Highlight interactable objects that are looked at
+        if (IsSeeingInteractable(out RaycastHit hit))
+        {
+            Highlight(hit);
+        }
+        else
+        {
+            ClearHighlight();
+        }
     }
 
     private void FixedUpdate()
@@ -45,7 +61,16 @@ public class PlayerController : MonoBehaviour
         float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
         float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
         Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmoothTime);
+        characterController.Move(targetVelocity);
+    }
+
+    public void OnInteract()
+    {
+        if (IsSeeingInteractable(out RaycastHit hit))
+        {
+            Debug.Log("Interacted with " + hit.transform.name);
+            Destroy(hit.transform.gameObject);
+        }
     }
 
     public void OnLook(InputValue value)
@@ -60,5 +85,33 @@ public class PlayerController : MonoBehaviour
         Vector2 motionVector = value.Get<Vector2>();
         moveInputX = motionVector.x;
         moveInputZ = motionVector.y;
+    }
+
+    private void ClearHighlight()
+    {
+        if (lastHighlightedObject != null)
+        {
+            lastHighlightedObject.GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
+            lastHighlightedObject = null;
+        }
+    }
+
+    private void Highlight(RaycastHit hit)
+    {
+        GameObject gameObject = hit.transform.gameObject;
+        if (lastHighlightedObject != gameObject)
+        {
+            ClearHighlight();
+            originalMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
+            gameObject.GetComponent<MeshRenderer>().sharedMaterial = highlightMaterial;
+            lastHighlightedObject = gameObject;
+        }
+    }
+
+    private bool IsSeeingInteractable(out RaycastHit hit)
+    {
+        Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
+        Ray ray = playerCamera.ViewportPointToRay(viewportCenterPoint);
+        return Physics.Raycast(ray, out hit, maxInteractDistance, whatIsInteractable);
     }
 }
