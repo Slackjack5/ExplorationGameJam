@@ -6,112 +6,148 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    // Unity Editor fields
-    [SerializeField] private Camera playerCamera;
-    [SerializeField] private LayerMask whatIsInteractable;
-    [SerializeField] private Material highlightMaterial;
-    [SerializeField] private float baseSpeed = 6f;
-    [SerializeField] private float lookSensitivity = 0.2f;
-    [SerializeField] private float maxInteractDistance = 1f;
+  // Unity Editor fields
+  [SerializeField] private Camera playerCamera;
+  [SerializeField] private LayerMask whatIsInteractable;
+  [SerializeField] private Material highlightMaterial;
+  [SerializeField] private float baseSpeed = 6f;
+  [SerializeField] private float lookSensitivity = 0.2f;
+  [SerializeField] private float maxInteractDistance = 1f;
+  [SerializeField] private float lerp = 0.1f;
 
-    // Private properties
-    private float cameraRotationX;
-    private CharacterController characterController;
-    private GameObject lastHighlightedObject;
-    private float lookInputX;
-    private float lookInputY;
-    private float moveInputX;
-    private float moveInputZ;
-    private Material originalMaterial;
+  // Private properties
+  private float cameraRotationX;
+  private CharacterController characterController;
+  private GameObject lastHighlightedObject;
+  private float lookInputX;
+  private float lookInputY;
+  private float moveInputX;
+  private float moveInputZ;
+  private Vector3 currentVelocity;
+  private Material originalMaterial;
 
-    // Start is called before the first frame update
-    void Start()
+  // Shader stuff
+  public float shaderDelay;
+  private float shaderTimer;
+  private int nextPoint;
+
+  // Start is called before the first frame update
+  void Start()
+  {
+    nextPoint = 0;
+    shaderTimer = Time.time + shaderDelay;
+    characterController = GetComponent<CharacterController>();
+
+    Cursor.lockState = CursorLockMode.Locked;
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    Shader.SetGlobalVector("_PlayerPos", transform.position);
+    if (shaderTimer <= Time.time)
     {
-        characterController = GetComponent<CharacterController>();
-
-        Cursor.lockState = CursorLockMode.Locked;
+      switch (nextPoint)
+      {
+        case 0:
+          Shader.SetGlobalVector("_Point1", transform.position);
+          Shader.SetGlobalFloat("_Point1Time", Time.time); break;
+        case 1:
+          Shader.SetGlobalVector("_Point2", transform.position);
+          Shader.SetGlobalFloat("_Point2Time", Time.time); break;
+        case 2:
+          Shader.SetGlobalVector("_Point3", transform.position);
+          Shader.SetGlobalFloat("_Point3Time", Time.time); break;
+      }
+      if (nextPoint < 2)
+      {
+        nextPoint++;
+      }
+      else
+      {
+        nextPoint = 0;
+      }
+      shaderTimer = Time.time + shaderDelay;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Look
+    float targetHorizontalLook = lookSensitivity * lookInputX;
+    transform.Rotate(Vector3.up * targetHorizontalLook);
+
+    float targetVerticalLook = lookSensitivity * lookInputY;
+    cameraRotationX -= targetVerticalLook;
+    cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
+    playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+
+    // Highlight interactable objects that are looked at
+    if (IsSeeingInteractable(out RaycastHit hit))
     {
-        // Look
-        float targetHorizontalLook = lookSensitivity * lookInputX;
-        transform.Rotate(Vector3.up * targetHorizontalLook);
-
-        float targetVerticalLook = lookSensitivity * lookInputY;
-        cameraRotationX -= targetVerticalLook;
-        cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
-        playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
-
-        // Highlight interactable objects that are looked at
-        if (IsSeeingInteractable(out RaycastHit hit))
-        {
-            Highlight(hit);
-        }
-        else
-        {
-            ClearHighlight();
-        }
+      Highlight(hit);
     }
-
-    private void FixedUpdate()
+    else
     {
-        // Move
-        float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
-        float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
-        Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
-        characterController.Move(targetVelocity);
+      ClearHighlight();
     }
+  }
 
-    public void OnInteract()
-    {
-        if (IsSeeingInteractable(out RaycastHit hit))
-        {
-            Debug.Log("Interacted with " + hit.transform.name);
-            Destroy(hit.transform.gameObject);
-        }
-    }
+  private void FixedUpdate()
+  {
+    // Move
+    float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
+    float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
+    Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
+    currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
+    characterController.Move(currentVelocity);
+  }
 
-    public void OnLook(InputValue value)
+  public void OnInteract()
+  {
+    if (IsSeeingInteractable(out RaycastHit hit))
     {
-        Vector2 lookVector = value.Get<Vector2>();
-        lookInputX = lookVector.x;
-        lookInputY = lookVector.y;
+      Debug.Log("Interacted with " + hit.transform.name);
+      Destroy(hit.transform.gameObject);
     }
+  }
 
-    public void OnMove(InputValue value)
-    {
-        Vector2 motionVector = value.Get<Vector2>();
-        moveInputX = motionVector.x;
-        moveInputZ = motionVector.y;
-    }
+  public void OnLook(InputValue value)
+  {
+    Vector2 lookVector = value.Get<Vector2>();
+    lookInputX = lookVector.x;
+    lookInputY = lookVector.y;
+  }
 
-    private void ClearHighlight()
-    {
-        if (lastHighlightedObject != null)
-        {
-            lastHighlightedObject.GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
-            lastHighlightedObject = null;
-        }
-    }
+  public void OnMove(InputValue value)
+  {
+    Vector2 motionVector = value.Get<Vector2>();
+    moveInputX = motionVector.x;
+    moveInputZ = motionVector.y;
+  }
 
-    private void Highlight(RaycastHit hit)
+  private void ClearHighlight()
+  {
+    if (lastHighlightedObject != null)
     {
-        GameObject gameObject = hit.transform.gameObject;
-        if (lastHighlightedObject != gameObject)
-        {
-            ClearHighlight();
-            originalMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
-            gameObject.GetComponent<MeshRenderer>().sharedMaterial = highlightMaterial;
-            lastHighlightedObject = gameObject;
-        }
+      lastHighlightedObject.GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
+      lastHighlightedObject = null;
     }
+  }
 
-    private bool IsSeeingInteractable(out RaycastHit hit)
+  private void Highlight(RaycastHit hit)
+  {
+    GameObject gameObject = hit.transform.gameObject;
+    if (lastHighlightedObject != gameObject)
     {
-        Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
-        Ray ray = playerCamera.ViewportPointToRay(viewportCenterPoint);
-        return Physics.Raycast(ray, out hit, maxInteractDistance, whatIsInteractable);
+      ClearHighlight();
+      originalMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
+      gameObject.GetComponent<MeshRenderer>().sharedMaterial = highlightMaterial;
+      lastHighlightedObject = gameObject;
     }
+  }
+
+  private bool IsSeeingInteractable(out RaycastHit hit)
+  {
+    Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
+    Ray ray = playerCamera.ViewportPointToRay(viewportCenterPoint);
+    return Physics.Raycast(ray, out hit, maxInteractDistance, whatIsInteractable);
+  }
 }
