@@ -102,6 +102,11 @@ public class PlayerController : MonoBehaviour
     characterController.Move(currentVelocity);
   }
 
+  public void OnFire()
+  {
+    gameCamera.TakePicture();
+  }
+
   public void OnInteract()
   {
     if (IsSeeingInteractable(out RaycastHit hit))
