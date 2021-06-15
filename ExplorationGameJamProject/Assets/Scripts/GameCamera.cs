@@ -8,18 +8,17 @@ public class GameCamera : MonoBehaviour
   [SerializeField] private GameObject cameraCanvas;
 
   // Private properties
-  private int pictureCount;
-
-  // Constants
-  private const string pathPrefix = "Screenshots/";
+  private Inventory inventory;
 
   // Start is called before the first frame update
   void Start()
   {
+    inventory = GetComponent<Inventory>();
+
     cameraCanvas.SetActive(false);
   }
 
-  public void TakePicture()
+  public void TakePhoto()
   {
     if (cameraCanvas.activeSelf)
     {
@@ -38,8 +37,9 @@ public class GameCamera : MonoBehaviour
   {
     yield return new WaitForEndOfFrame();
 
-    ScreenCapture.CaptureScreenshot(pathPrefix + pictureCount + ".png");
-    pictureCount++;
+    Texture2D texture = ScreenCapture.CaptureScreenshotAsTexture();
+    Sprite photo = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+    inventory.AddPhoto(photo);
     cameraCanvas.SetActive(true);
   }
 }

@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
   {
     if (!pauseMenu.activeSelf)
     {
-      gameCamera.TakePicture();
+      gameCamera.TakePhoto();
     }
   }
 
@@ -169,6 +169,11 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  public void OnOpenInventory()
+  {
+    Debug.Log("Opened inventory");
+  }
+  
   public void OnSecondaryFire()
   {
     if (!pauseMenu.activeSelf)
