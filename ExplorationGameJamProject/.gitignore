@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Ss]creenshots/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -24,6 +25,9 @@
 
 # Visual Studio cache directory
 .vs/
+
+# Visual Studio Code
+.vscode/
 
 # Gradle cache directory
 .gradle/

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
   // Private properties
   private float cameraRotationX;
   private CharacterController characterController;
+  private GameCamera gameCamera;
   private GameObject lastHighlightedObject;
   private float lookInputX;
   private float lookInputY;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     nextPoint = 0;
     shaderTimer = Time.time + shaderDelay;
     characterController = GetComponent<CharacterController>();
+    gameCamera = GetComponent<GameCamera>();
 
     Cursor.lockState = CursorLockMode.Locked;
   }
@@ -100,6 +102,11 @@ public class PlayerController : MonoBehaviour
     characterController.Move(currentVelocity);
   }
 
+  public void OnFire()
+  {
+    gameCamera.TakePicture();
+  }
+
   public void OnInteract()
   {
     if (IsSeeingInteractable(out RaycastHit hit))
@@ -121,6 +128,11 @@ public class PlayerController : MonoBehaviour
     Vector2 motionVector = value.Get<Vector2>();
     moveInputX = motionVector.x;
     moveInputZ = motionVector.y;
+  }
+  
+  public void OnSecondaryFire()
+  {
+    gameCamera.Toggle();
   }
 
   private void ClearHighlight()
