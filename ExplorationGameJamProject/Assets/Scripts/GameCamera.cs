@@ -20,7 +20,7 @@ public class GameCamera : MonoBehaviour
 
   public void TakePhoto()
   {
-    if (cameraCanvas.activeSelf)
+    if (cameraCanvas.activeSelf && !inventory.IsOpen)
     {
       // Disable the camera UI so that it doesn't appear in screenshot
       cameraCanvas.SetActive(false);

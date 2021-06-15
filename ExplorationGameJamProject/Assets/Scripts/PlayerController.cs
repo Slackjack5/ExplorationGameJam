@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
 
   // Private properties
   private float cameraRotationX;
-  private CharacterController characterController;
-  private GameCamera gameCamera;
   private GameObject lastHighlightedObject;
   public GameObject pauseMenu;
   private float lookInputX;
@@ -27,6 +25,11 @@ public class PlayerController : MonoBehaviour
   private float moveInputZ;
   private Vector3 currentVelocity;
   private Material originalMaterial;
+
+  // Components
+  private CharacterController characterController;
+  private GameCamera gameCamera;
+  private Inventory inventory;
 
   // Shader stuff
   public float shaderDelay;
@@ -39,10 +42,13 @@ public class PlayerController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    nextPoint = 0;
-    shaderTimer = Time.time + shaderDelay;
+    // Initialize components
     characterController = GetComponent<CharacterController>();
     gameCamera = GetComponent<GameCamera>();
+    inventory = GetComponent<Inventory>();
+
+    nextPoint = 0;
+    shaderTimer = Time.time + shaderDelay;
 
     Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
@@ -171,7 +177,7 @@ public class PlayerController : MonoBehaviour
 
   public void OnOpenInventory()
   {
-    Debug.Log("Opened inventory");
+    inventory.Toggle();
   }
   
   public void OnSecondaryFire()

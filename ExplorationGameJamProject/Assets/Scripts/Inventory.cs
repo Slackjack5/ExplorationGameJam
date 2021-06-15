@@ -10,9 +10,15 @@ public class Inventory : MonoBehaviour
 
   private List<Sprite> photos;
 
+  public bool IsOpen {
+    get { return inventoryPanel.activeSelf; }
+  }
+
   private void Start()
   {
     photos = new List<Sprite>();
+
+    inventoryPanel.SetActive(false);
   }
 
   public void AddPhoto(Sprite photo)
@@ -27,5 +33,10 @@ public class Inventory : MonoBehaviour
     rectTransform.SetParent(inventoryPanel.transform);
     rectTransform.localPosition = new Vector2(0, 0);
     rectTransform.sizeDelta = photoShrinkFactor * new Vector2(photo.texture.width, photo.texture.height);
+  }
+
+  public void Toggle()
+  {
+    inventoryPanel.SetActive(!inventoryPanel.activeSelf);
   }
 }
