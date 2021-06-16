@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
   [SerializeField] private LayerMask whatIsInteractable;
-  [SerializeField] private Material highlightMaterial;
   [SerializeField] private float baseSpeed = 6f;
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
@@ -24,7 +23,6 @@ public class PlayerController : MonoBehaviour
   private float moveInputX;
   private float moveInputZ;
   private Vector3 currentVelocity;
-  private Material originalMaterial;
 
   // Components
   private CharacterController characterController;
@@ -192,7 +190,7 @@ public class PlayerController : MonoBehaviour
   {
     if (lastHighlightedObject != null)
     {
-      lastHighlightedObject.GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
+      lastHighlightedObject.GetComponent<Outline>().enabled = false;
       lastHighlightedObject = null;
     }
   }
@@ -203,8 +201,7 @@ public class PlayerController : MonoBehaviour
     if (lastHighlightedObject != gameObject)
     {
       ClearHighlight();
-      originalMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
-      gameObject.GetComponent<MeshRenderer>().sharedMaterial = highlightMaterial;
+      gameObject.GetComponent<Outline>().enabled = true;
       lastHighlightedObject = gameObject;
     }
   }
