@@ -82,13 +82,16 @@ public class PlayerController : MonoBehaviour
     }
 
     // Look
-    float targetHorizontalLook = lookSensitivity * lookInputX;
-    transform.Rotate(Vector3.up * targetHorizontalLook);
+    if (!inventory.IsOpen)
+    {
+      float targetHorizontalLook = lookSensitivity * lookInputX;
+      transform.Rotate(Vector3.up * targetHorizontalLook);
 
-    float targetVerticalLook = lookSensitivity * lookInputY;
-    cameraRotationX -= targetVerticalLook;
-    cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
-    playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+      float targetVerticalLook = lookSensitivity * lookInputY;
+      cameraRotationX -= targetVerticalLook;
+      cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
+      playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+    }
 
     // Highlight interactable objects that are looked at
     if (IsSeeingInteractable(out RaycastHit hit))
@@ -180,7 +183,7 @@ public class PlayerController : MonoBehaviour
   
   public void OnSecondaryFire()
   {
-    if (!pauseMenu.activeSelf)
+    if (!pauseMenu.activeSelf && !inventory.IsOpen)
     {
       gameCamera.Toggle();
     }
