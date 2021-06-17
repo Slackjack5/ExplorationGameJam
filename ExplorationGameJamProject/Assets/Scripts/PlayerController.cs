@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
   private float shaderTimer;
   private int nextPoint;
 
+    //Audio Timer
+    private bool playingFootstep = false;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -102,9 +105,25 @@ public class PlayerController : MonoBehaviour
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
     currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
     characterController.Move(currentVelocity);
+
+        //Footstep audio
+        if(characterController.velocity.magnitude >= .1f && playingFootstep==false)
+        {
+            AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
+            StartCoroutine(NextFootstep());
+            playingFootstep = true;
+        }
+
   }
 
-  public void OnPause()
+    IEnumerator NextFootstep()
+    {
+        yield return new WaitForSeconds(.6f);
+        print("footstep");
+        playingFootstep = false;
+    }
+
+        public void OnPause()
   {
     pauseMenu.SetActive(!pauseMenu.activeSelf);
     Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
