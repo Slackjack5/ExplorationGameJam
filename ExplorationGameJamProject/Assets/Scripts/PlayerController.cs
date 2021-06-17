@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Look
-    if (!inventory.IsOpen)
+    if (!pauseMenu.activeSelf && !inventory.IsOpen)
     {
       float targetHorizontalLook = lookSensitivity * lookInputX;
       transform.Rotate(Vector3.up * targetHorizontalLook);
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
 
-    if (inventory.IsOpen)
+    if (pauseMenu.activeSelf || inventory.IsOpen)
     {
       targetVelocity = Vector3.zero;
     }
@@ -164,22 +164,16 @@ public class PlayerController : MonoBehaviour
 
   public void OnLook(InputValue value)
   {
-    if (!pauseMenu.activeSelf)
-    {
-      Vector2 lookVector = value.Get<Vector2>();
-      lookInputX = lookVector.x;
-      lookInputY = lookVector.y;
-    }
+    Vector2 lookVector = value.Get<Vector2>();
+    lookInputX = lookVector.x;
+    lookInputY = lookVector.y;
   }
 
   public void OnMove(InputValue value)
   {
-    if (!pauseMenu.activeSelf)
-    {
-      Vector2 motionVector = value.Get<Vector2>();
-      moveInputX = motionVector.x;
-      moveInputZ = motionVector.y;
-    }
+    Vector2 motionVector = value.Get<Vector2>();
+    moveInputX = motionVector.x;
+    moveInputZ = motionVector.y;
   }
 
   public void OnOpenInventory()
