@@ -162,6 +162,9 @@ GameObject:
   - component: {fileID: 7161833829234958194}
   - component: {fileID: 8668301873496669954}
   - component: {fileID: 5118254330940106386}
+  - component: {fileID: 6634115739432361109}
+  - component: {fileID: 2031036906753312358}
+  - component: {fileID: 8878326280191244289}
   m_Layer: 0
   m_Name: Capsule Player
   m_TagString: Untagged
@@ -343,7 +346,6 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 64
-  highlightMaterial: {fileID: 0}
   baseSpeed: 6
   lookSensitivity: 0.2
   maxInteractDistance: 1
@@ -438,3 +440,57 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &6634115739432361109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449780693534710789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0edbb9c246617b479b0d98f324746ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1e76f203adb7cbe4f8fa8b288d2e32d7, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &2031036906753312358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449780693534710789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f8858c55846eb4d8cc9a83f894f29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraCanvas: {fileID: 0}
+--- !u!114 &8878326280191244289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449780693534710789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d747d6e17e5b484fbcb0419c498b1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 0}
+  sidebar: {fileID: 0}
+  selectedPhotoPanel: {fileID: 0}
+  photoShrinkFactor: 0.07
+  selectedPhotoShrinkFactor: 0.5

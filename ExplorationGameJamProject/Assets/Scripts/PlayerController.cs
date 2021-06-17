@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
   [SerializeField] private LayerMask whatIsInteractable;
-  [SerializeField] private Material highlightMaterial;
   [SerializeField] private float baseSpeed = 6f;
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
@@ -17,8 +16,6 @@ public class PlayerController : MonoBehaviour
 
   // Private properties
   private float cameraRotationX;
-  private CharacterController characterController;
-  private GameCamera gameCamera;
   private GameObject lastHighlightedObject;
   public GameObject pauseMenu;
   private float lookInputX;
@@ -26,7 +23,11 @@ public class PlayerController : MonoBehaviour
   private float moveInputX;
   private float moveInputZ;
   private Vector3 currentVelocity;
-  private Material originalMaterial;
+
+  // Components
+  private CharacterController characterController;
+  private GameCamera gameCamera;
+  private Inventory inventory;
 
   // Shader stuff
   public float shaderDelay;
@@ -39,10 +40,13 @@ public class PlayerController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    nextPoint = 0;
-    shaderTimer = Time.time + shaderDelay;
+    // Initialize components
     characterController = GetComponent<CharacterController>();
     gameCamera = GetComponent<GameCamera>();
+    inventory = GetComponent<Inventory>();
+
+    nextPoint = 0;
+    shaderTimer = Time.time + shaderDelay;
 
     Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
@@ -78,13 +82,16 @@ public class PlayerController : MonoBehaviour
     }
 
     // Look
-    float targetHorizontalLook = lookSensitivity * lookInputX;
-    transform.Rotate(Vector3.up * targetHorizontalLook);
+    if (!pauseMenu.activeSelf && !inventory.IsOpen)
+    {
+      float targetHorizontalLook = lookSensitivity * lookInputX;
+      transform.Rotate(Vector3.up * targetHorizontalLook);
 
-    float targetVerticalLook = lookSensitivity * lookInputY;
-    cameraRotationX -= targetVerticalLook;
-    cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
-    playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+      float targetVerticalLook = lookSensitivity * lookInputY;
+      cameraRotationX -= targetVerticalLook;
+      cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
+      playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+    }
 
     // Highlight interactable objects that are looked at
     if (IsSeeingInteractable(out RaycastHit hit))
@@ -103,6 +110,12 @@ public class PlayerController : MonoBehaviour
     float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
     float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
+
+    if (pauseMenu.activeSelf || inventory.IsOpen)
+    {
+      targetVelocity = Vector3.zero;
+    }
+
     currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
     characterController.Move(currentVelocity);
 
@@ -136,7 +149,7 @@ public class PlayerController : MonoBehaviour
   {
     if (!pauseMenu.activeSelf)
     {
-      gameCamera.TakePicture();
+      gameCamera.TakePhoto();
     }
   }
 
@@ -151,27 +164,26 @@ public class PlayerController : MonoBehaviour
 
   public void OnLook(InputValue value)
   {
-    if (!pauseMenu.activeSelf)
-    {
-      Vector2 lookVector = value.Get<Vector2>();
-      lookInputX = lookVector.x;
-      lookInputY = lookVector.y;
-    }
+    Vector2 lookVector = value.Get<Vector2>();
+    lookInputX = lookVector.x;
+    lookInputY = lookVector.y;
   }
 
   public void OnMove(InputValue value)
   {
-    if (!pauseMenu.activeSelf)
-    {
-      Vector2 motionVector = value.Get<Vector2>();
-      moveInputX = motionVector.x;
-      moveInputZ = motionVector.y;
-    }
+    Vector2 motionVector = value.Get<Vector2>();
+    moveInputX = motionVector.x;
+    moveInputZ = motionVector.y;
   }
 
+  public void OnOpenInventory()
+  {
+    inventory.Toggle();
+  }
+  
   public void OnSecondaryFire()
   {
-    if (!pauseMenu.activeSelf)
+    if (!pauseMenu.activeSelf && !inventory.IsOpen)
     {
       gameCamera.Toggle();
     }
@@ -181,7 +193,7 @@ public class PlayerController : MonoBehaviour
   {
     if (lastHighlightedObject != null)
     {
-      lastHighlightedObject.GetComponent<MeshRenderer>().sharedMaterial = originalMaterial;
+      lastHighlightedObject.GetComponent<Outline>().enabled = false;
       lastHighlightedObject = null;
     }
   }
@@ -192,8 +204,7 @@ public class PlayerController : MonoBehaviour
     if (lastHighlightedObject != gameObject)
     {
       ClearHighlight();
-      originalMaterial = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
-      gameObject.GetComponent<MeshRenderer>().sharedMaterial = highlightMaterial;
+      gameObject.GetComponent<Outline>().enabled = true;
       lastHighlightedObject = gameObject;
     }
   }
