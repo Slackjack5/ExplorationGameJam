@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
   private CharacterController characterController;
   private GameCamera gameCamera;
   private GameObject lastHighlightedObject;
+  public GameObject pauseMenu;
   private float lookInputX;
   private float lookInputY;
   private float moveInputX;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     characterController = GetComponent<CharacterController>();
     gameCamera = GetComponent<GameCamera>();
 
+    Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
   }
 
@@ -102,14 +104,26 @@ public class PlayerController : MonoBehaviour
     characterController.Move(currentVelocity);
   }
 
+  public void OnPause()
+  {
+    pauseMenu.SetActive(!pauseMenu.activeSelf);
+    Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+    Cursor.visible = pauseMenu.activeSelf;
+    Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
+  }
+
+
   public void OnFire()
   {
-    gameCamera.TakePicture();
+    if (!pauseMenu.activeSelf)
+    {
+      gameCamera.TakePicture();
+    }
   }
 
   public void OnInteract()
   {
-    if (IsSeeingInteractable(out RaycastHit hit))
+    if (IsSeeingInteractable(out RaycastHit hit) && pauseMenu.activeSelf)
     {
       Debug.Log("Interacted with " + hit.transform.name);
       Destroy(hit.transform.gameObject);
@@ -118,21 +132,30 @@ public class PlayerController : MonoBehaviour
 
   public void OnLook(InputValue value)
   {
-    Vector2 lookVector = value.Get<Vector2>();
-    lookInputX = lookVector.x;
-    lookInputY = lookVector.y;
+    if (!pauseMenu.activeSelf)
+    {
+      Vector2 lookVector = value.Get<Vector2>();
+      lookInputX = lookVector.x;
+      lookInputY = lookVector.y;
+    }
   }
 
   public void OnMove(InputValue value)
   {
-    Vector2 motionVector = value.Get<Vector2>();
-    moveInputX = motionVector.x;
-    moveInputZ = motionVector.y;
+    if (!pauseMenu.activeSelf)
+    {
+      Vector2 motionVector = value.Get<Vector2>();
+      moveInputX = motionVector.x;
+      moveInputZ = motionVector.y;
+    }
   }
-  
+
   public void OnSecondaryFire()
   {
-    gameCamera.Toggle();
+    if (!pauseMenu.activeSelf)
+    {
+      gameCamera.Toggle();
+    }
   }
 
   private void ClearHighlight()
