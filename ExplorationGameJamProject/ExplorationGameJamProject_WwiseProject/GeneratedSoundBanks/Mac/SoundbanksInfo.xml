@@ -16,10 +16,183 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1661994096" Language="SFX" Hash="2249561840">
-			<ObjectPath>\SoundBanks\Default Work Unit\Soundbank</ObjectPath>
-			<ShortName>Soundbank</ShortName>
-			<Path>Soundbank.bnk</Path>
+		<SoundBank Id="2385628198" Language="SFX" Hash="1538952521">
+			<ObjectPath>\SoundBanks\Default Work Unit\Footsteps</ObjectPath>
+			<ShortName>Footsteps</ShortName>
+			<Path>Footsteps.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Play_Footsteps" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.966030">
+					<IncludedMemoryFiles>
+						<File Id="17016992" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement6.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement6_10C4C929.wem</Path>
+						</File>
+						<File Id="86673855" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood1.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood1_10C4C929.wem</Path>
+						</File>
+						<File Id="95222570" Language="SFX">
+							<ShortName>Footsteps\Water\Water2.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water2_10C4C929.wem</Path>
+						</File>
+						<File Id="115202693" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement2.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement2_10C4C929.wem</Path>
+						</File>
+						<File Id="143088308" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt6.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt6_10C4C929.wem</Path>
+						</File>
+						<File Id="161409672" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood6.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood6_10C4C929.wem</Path>
+						</File>
+						<File Id="209586948" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood5.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood5_10C4C929.wem</Path>
+						</File>
+						<File Id="231488205" Language="SFX">
+							<ShortName>Footsteps\Water\Water6.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water6_10C4C929.wem</Path>
+						</File>
+						<File Id="278274717" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt3.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt3_10C4C929.wem</Path>
+						</File>
+						<File Id="278954077" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement3.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement3_10C4C929.wem</Path>
+						</File>
+						<File Id="315282985" Language="SFX">
+							<ShortName>Footsteps\Water\Water5.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water5_10C4C929.wem</Path>
+						</File>
+						<File Id="450761631" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt2.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt2_10C4C929.wem</Path>
+						</File>
+						<File Id="469814081" Language="SFX">
+							<ShortName>Footsteps\Water\Water1.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water1_10C4C929.wem</Path>
+						</File>
+						<File Id="503791878" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood2.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood2_10C4C929.wem</Path>
+						</File>
+						<File Id="518886176" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt4.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt4_10C4C929.wem</Path>
+						</File>
+						<File Id="692843506" Language="SFX">
+							<ShortName>Footsteps\Water\Water4.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water4_10C4C929.wem</Path>
+						</File>
+						<File Id="721614291" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood4.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood4_10C4C929.wem</Path>
+						</File>
+						<File Id="794459003" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt1.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt1_10C4C929.wem</Path>
+						</File>
+						<File Id="801515083" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement4.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement4_10C4C929.wem</Path>
+						</File>
+						<File Id="830358596" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement1.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement1_10C4C929.wem</Path>
+						</File>
+						<File Id="904388525" Language="SFX">
+							<ShortName>Footsteps\TiledFloor\Cement5.wav</ShortName>
+							<Path>SFX\Footsteps\TiledFloor\Cement5_10C4C929.wem</Path>
+						</File>
+						<File Id="933164296" Language="SFX">
+							<ShortName>Footsteps\Wood\Wood3.wav</ShortName>
+							<Path>SFX\Footsteps\Wood\Wood3_10C4C929.wem</Path>
+						</File>
+						<File Id="1036312664" Language="SFX">
+							<ShortName>Footsteps\Water\Water3.wav</ShortName>
+							<Path>SFX\Footsteps\Water\Water3_10C4C929.wem</Path>
+						</File>
+						<File Id="1047772513" Language="SFX">
+							<ShortName>Footsteps\Dirt\Dirt5.wav</ShortName>
+							<Path>SFX\Footsteps\Dirt\Dirt5_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{53F2B753-55B7-4B18-B9EE-9DA6BCDDC7E2}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{EA16D723-7E80-48CE-B919-447595A91209}">
+							<Media>
+								<File Id="143088308"/>
+								<File Id="278274717"/>
+								<File Id="450761631"/>
+								<File Id="518886176"/>
+								<File Id="794459003"/>
+								<File Id="1047772513"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{30B00561-ABE2-45CD-B774-415E6456F46A}">
+							<Media>
+								<File Id="17016992"/>
+								<File Id="115202693"/>
+								<File Id="278954077"/>
+								<File Id="801515083"/>
+								<File Id="830358596"/>
+								<File Id="904388525"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{53F2B753-55B7-4B18-B9EE-9DA6BCDDC7E2}">
+							<Media>
+								<File Id="17016992"/>
+								<File Id="86673855"/>
+								<File Id="95222570"/>
+								<File Id="115202693"/>
+								<File Id="143088308"/>
+								<File Id="161409672"/>
+								<File Id="209586948"/>
+								<File Id="231488205"/>
+								<File Id="278274717"/>
+								<File Id="278954077"/>
+								<File Id="315282985"/>
+								<File Id="450761631"/>
+								<File Id="469814081"/>
+								<File Id="503791878"/>
+								<File Id="518886176"/>
+								<File Id="692843506"/>
+								<File Id="721614291"/>
+								<File Id="794459003"/>
+								<File Id="801515083"/>
+								<File Id="830358596"/>
+								<File Id="904388525"/>
+								<File Id="933164296"/>
+								<File Id="1036312664"/>
+								<File Id="1047772513"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{D185B0D1-7037-4FC2-A27F-F0CDEEC8F786}">
+							<Media>
+								<File Id="86673855"/>
+								<File Id="161409672"/>
+								<File Id="209586948"/>
+								<File Id="503791878"/>
+								<File Id="721614291"/>
+								<File Id="933164296"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2385628198" Name="Footsteps" ObjectPath="\Switches\Default Work Unit\Footsteps">
+					<Switches>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Footsteps\Dirt"/>
+						<Switch Id="2654748154" Name="Water" ObjectPath="\Switches\Default Work Unit\Footsteps\Water"/>
+						<Switch Id="2637588553" Name="Tile" ObjectPath="\Switches\Default Work Unit\Footsteps\Tile"/>
+						<Switch Id="2058049674" Name="Wood" ObjectPath="\Switches\Default Work Unit\Footsteps\Wood"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
