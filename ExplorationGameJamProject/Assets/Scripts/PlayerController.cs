@@ -110,6 +110,12 @@ public class PlayerController : MonoBehaviour
     float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
     float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
+
+    if (inventory.IsOpen)
+    {
+      targetVelocity = Vector3.zero;
+    }
+
     currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
     characterController.Move(currentVelocity);
 
