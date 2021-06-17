@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Look
-    if (!pauseMenu.activeSelf && !inventory.IsOpen)
+    if (IsGameActive())
     {
       float targetHorizontalLook = lookSensitivity * lookInputX;
       transform.Rotate(Vector3.up * targetHorizontalLook);
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
 
-    if (pauseMenu.activeSelf || inventory.IsOpen)
+    if (!IsGameActive())
     {
       targetVelocity = Vector3.zero;
     }
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
   public void OnInteract()
   {
-    if (IsSeeingInteractable(out RaycastHit hit) && pauseMenu.activeSelf)
+    if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
       Debug.Log("Interacted with " + hit.transform.name);
       Destroy(hit.transform.gameObject);
@@ -178,12 +178,15 @@ public class PlayerController : MonoBehaviour
 
   public void OnOpenInventory()
   {
-    inventory.Toggle();
+    if (!pauseMenu.activeSelf)
+    {
+      inventory.Toggle();
+    }
   }
   
   public void OnSecondaryFire()
   {
-    if (!pauseMenu.activeSelf && !inventory.IsOpen)
+    if (IsGameActive())
     {
       gameCamera.Toggle();
     }
@@ -207,6 +210,11 @@ public class PlayerController : MonoBehaviour
       gameObject.GetComponent<Outline>().enabled = true;
       lastHighlightedObject = gameObject;
     }
+  }
+
+  private bool IsGameActive()
+  {
+    return !pauseMenu.activeSelf && !inventory.IsOpen;
   }
 
   private bool IsSeeingInteractable(out RaycastHit hit)
