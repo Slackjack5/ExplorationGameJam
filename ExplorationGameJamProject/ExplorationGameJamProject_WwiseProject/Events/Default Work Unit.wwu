@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" SchemaVersion="103">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Monster" ID="{E399F722-8A16-4635-97CC-2B042D1A9DAA}">
+					<ChildrenList>
+						<Action Name="" ID="{7FD55341-DAAE-49F8-B31D-F58C90309484}" ShortID="263073549">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FemaleVocalLoop" ID="{2FDE66F9-B89D-45F8-8830-FB9D64427404}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1D79FA71-8F91-4A7E-9D5B-CC0281A80CB3}" ShortID="995323285">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MonsterBaseNoise" ID="{B6B10A14-5F52-487C-815D-03AEC95C02A7}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Footsteps" ID="{4C82D0CC-3AE0-4862-A027-A713D9A58C0D}">
+					<ChildrenList>
+						<Action Name="" ID="{FA00B040-8E28-4633-9E0A-64EDCDC261D3}" ShortID="470136285">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{B8C57A68-B586-4A53-93E3-E066EF167326}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

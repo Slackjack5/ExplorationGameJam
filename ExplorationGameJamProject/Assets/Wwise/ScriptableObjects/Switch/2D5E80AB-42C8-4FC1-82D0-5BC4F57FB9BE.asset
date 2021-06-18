@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8149483ab86d94442915d17f94537063, type: 3}
+  m_Name: 2D5E80AB-42C8-4FC1-82D0-5BC4F57FB9BE
+  m_EditorClassIdentifier: 
+  objectName: Tiles
+  id: 3316001432
+  guid: 2D5E80AB-42C8-4FC1-82D0-5BC4F57FB9BE
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 6facdd46fcabe89429747266fbb269b5, type: 2}

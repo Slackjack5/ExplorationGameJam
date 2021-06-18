@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID MONSTER = 2376328173U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
     } // namespace EVENTS
 
@@ -25,7 +26,7 @@ namespace AK
             namespace SWITCH
             {
                 static const AkUniqueID DIRT = 2195636714U;
-                static const AkUniqueID TILE = 2637588553U;
+                static const AkUniqueID TILES = 3316001432U;
                 static const AkUniqueID WATER = 2654748154U;
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
@@ -36,6 +37,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID AMBIENT = 77978275U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
     } // namespace BANKS
 
@@ -43,6 +45,11 @@ namespace AK
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB = 348963605U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

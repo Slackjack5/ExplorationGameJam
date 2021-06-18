@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2376328173	Monster			\Default Work Unit\Monster	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	461575458	FemaleVocalLoop	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleVocalLoop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\FemaleVocalLoop		7408868
+	708473194	MonsterBaseNoise	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\MonsterBaseNoise_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterBaseNoise		4365964
+
