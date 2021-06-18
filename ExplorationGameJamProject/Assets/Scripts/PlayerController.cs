@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
   {
     if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
-      Debug.Log("Interacted with " + hit.transform.name);
+      inventory.IncreaseCapacity();
       Destroy(hit.transform.gameObject);
     }
   }

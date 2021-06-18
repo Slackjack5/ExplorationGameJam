@@ -5,21 +5,37 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+  // Unity Editor fields
   [SerializeField] private GameObject inventoryPanel;
   [SerializeField] private GameObject sidebar;
   [SerializeField] private GameObject selectedPhotoPanel;
   [SerializeField] private float photoShrinkFactor = 0.07f;
   [SerializeField] private float selectedPhotoShrinkFactor = 0.5f;
+  [SerializeField] private int initialCapacity = 3;
 
+  // Private properties
   private List<Photo> photos;
   private GameObject selectedPhoto;
+
+  public int currentCapacity { get; private set; }
+
+  public bool HasSpace
+  {
+    get { return photos.Count < currentCapacity; }
+  }
 
   public bool IsOpen {
     get { return inventoryPanel.activeSelf; }
   }
 
+  public int PhotoCount
+  {
+    get { return photos.Count; }
+  }
+
   private void Start()
   {
+    currentCapacity = initialCapacity;
     photos = new List<Photo>();
 
     inventoryPanel.SetActive(false);
@@ -39,6 +55,11 @@ public class Inventory : MonoBehaviour
     rectTransform.sizeDelta = photoShrinkFactor * new Vector2(sprite.texture.width, sprite.texture.height);
 
     photos.Add(new Photo(photoObject, location));
+  }
+
+  public void IncreaseCapacity()
+  {
+    currentCapacity++;
   }
 
   public void Toggle()

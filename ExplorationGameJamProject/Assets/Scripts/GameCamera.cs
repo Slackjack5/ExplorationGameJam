@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameCamera : MonoBehaviour
 {
   // Unity Editor fields
   [SerializeField] private GameObject cameraCanvas;
   [SerializeField] private LayerMask whatIsMemory;
+  [SerializeField] private TextMeshProUGUI photoCounterText;
   [SerializeField] private float maxMemoryCaptureDistance = 5f;
 
   // Private properties
@@ -20,9 +22,14 @@ public class GameCamera : MonoBehaviour
     cameraCanvas.SetActive(false);
   }
 
+  private void Update()
+  {
+    photoCounterText.text = FormatCounter();
+  }
+
   public void TakePhoto(Ray lookRay)
   {
-    if (cameraCanvas.activeSelf && !inventory.IsOpen)
+    if (cameraCanvas.activeSelf && !inventory.IsOpen && inventory.HasSpace)
     {
       // Disable the camera UI so that it doesn't appear in screenshot
       cameraCanvas.SetActive(false);
@@ -43,6 +50,11 @@ public class GameCamera : MonoBehaviour
     Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     inventory.AddPhoto(sprite, GetLocation(lookRay));
     cameraCanvas.SetActive(true);
+  }
+
+  private string FormatCounter()
+  {
+    return inventory.PhotoCount + " / " + inventory.currentCapacity;
   }
 
   private Vector3 GetLocation(Ray lookRay)
