@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class PlayerController : MonoBehaviour
 {
   // Unity Editor fields
@@ -18,11 +19,14 @@ public class PlayerController : MonoBehaviour
   private float cameraRotationX;
   private GameObject lastHighlightedObject;
   public GameObject pauseMenu;
+  public Volume volume;
+  public GameObject enemy;
   private float lookInputX;
   private float lookInputY;
   private float moveInputX;
   private float moveInputZ;
   private Vector3 currentVelocity;
+  private Bloom bloom;
 
   // Components
   private CharacterController characterController;
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    // Load in bloom component
+    volume.profile.TryGet<Bloom>(out bloom);
     // Insure no shader nonsense at start of scene
     Vector3 offmap = new Vector3(9999999, 9999999, 9999999);
     Shader.SetGlobalVector("_Point1", offmap);
@@ -88,6 +94,19 @@ public class PlayerController : MonoBehaviour
         nextPoint = 0;
       }
       shaderTimer = Time.time + shaderDelay;
+    }
+
+    // Change bloom if enemy is close
+    Vector2 playerXZ = new Vector2(transform.position.x, transform.position.z);
+    Vector2 enemyXZ = new Vector2(enemy.transform.position.x, enemy.transform.position.z);
+    float enemyDistance = Math.Abs(Vector2.Distance(playerXZ, enemyXZ));
+    if (enemyDistance < 5)
+    {
+      Color currentTint = new Color(1, 1, 1, 1);
+      currentTint.g = enemyDistance / 5f;
+      currentTint.b = enemyDistance / 5f;
+      bloom.tint.value = currentTint;
+      bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
     }
 
     // Look
