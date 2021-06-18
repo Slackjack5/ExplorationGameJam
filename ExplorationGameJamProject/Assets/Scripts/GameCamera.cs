@@ -38,8 +38,13 @@ public class GameCamera : MonoBehaviour
     yield return new WaitForEndOfFrame();
 
     Texture2D texture = ScreenCapture.CaptureScreenshotAsTexture();
-    Sprite photo = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-    inventory.AddPhoto(photo);
+    Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+    inventory.AddPhoto(sprite, GetLocation());
     cameraCanvas.SetActive(true);
+  }
+
+  private Vector3 GetLocation()
+  {
+    return Vector3.zero;
   }
 }
