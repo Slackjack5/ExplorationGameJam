@@ -34,12 +34,21 @@ public class PlayerController : MonoBehaviour
   private float shaderTimer;
   private int nextPoint;
 
-    //Audio Timer
-    private bool playingFootstep = false;
+  //Audio Timer
+  private bool playingFootstep = false;
 
   // Start is called before the first frame update
   void Start()
   {
+    // Insure no shader nonsense at start of scene
+    Vector3 offmap = new Vector3(9999999, 9999999, 9999999);
+    Shader.SetGlobalVector("_Point1", offmap);
+    Shader.SetGlobalFloat("_Point1Time", -10000);
+    Shader.SetGlobalVector("_Point2", offmap);
+    Shader.SetGlobalFloat("_Point2Time", -10000);
+    Shader.SetGlobalVector("_Point3", offmap);
+    Shader.SetGlobalFloat("_Point3Time", -10000);
+
     // Initialize components
     characterController = GetComponent<CharacterController>();
     gameCamera = GetComponent<GameCamera>();
@@ -119,24 +128,24 @@ public class PlayerController : MonoBehaviour
     currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
     characterController.Move(currentVelocity);
 
-        //Footstep audio
-        if(characterController.velocity.magnitude >= .1f && playingFootstep==false)
-        {
-            AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
-            StartCoroutine(NextFootstep());
-            playingFootstep = true;
-        }
+    //Footstep audio
+    if (characterController.velocity.magnitude >= .1f && playingFootstep == false)
+    {
+      AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
+      StartCoroutine(NextFootstep());
+      playingFootstep = true;
+    }
 
   }
 
-    IEnumerator NextFootstep()
-    {
-        yield return new WaitForSeconds(.6f);
-        print("footstep");
-        playingFootstep = false;
-    }
+  IEnumerator NextFootstep()
+  {
+    yield return new WaitForSeconds(.6f);
+    print("footstep");
+    playingFootstep = false;
+  }
 
-        public void OnPause()
+  public void OnPause()
   {
     pauseMenu.SetActive(!pauseMenu.activeSelf);
     Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
@@ -183,7 +192,7 @@ public class PlayerController : MonoBehaviour
       inventory.Toggle();
     }
   }
-  
+
   public void OnSecondaryFire()
   {
     if (IsGameActive())

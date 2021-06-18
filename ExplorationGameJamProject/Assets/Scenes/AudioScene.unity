@@ -1060,11 +1060,11 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 64
-  highlightMaterial: {fileID: 2100000, guid: 637111cd2c729f54092e9246f021a6de, type: 2}
   baseSpeed: 6
   lookSensitivity: 0.2
   maxInteractDistance: 1
   lerp: 0.1
+  pauseMenu: {fileID: 0}
   shaderDelay: 4
 --- !u!1 &1765594962
 GameObject:
