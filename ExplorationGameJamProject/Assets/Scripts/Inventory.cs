@@ -57,6 +57,11 @@ public class Inventory : MonoBehaviour
     photos.Add(new Photo(photoObject, location));
   }
 
+  public void IncreaseCapacity()
+  {
+    currentCapacity++;
+  }
+
   public void Toggle()
   {
     inventoryPanel.SetActive(!inventoryPanel.activeSelf);
