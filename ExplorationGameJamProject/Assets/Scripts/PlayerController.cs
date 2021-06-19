@@ -102,10 +102,6 @@ public class PlayerController : MonoBehaviour
     float enemyDistance = Math.Abs(Vector2.Distance(playerXZ, enemyXZ));
     if (enemyDistance < 5)
     {
-      Color currentTint = new Color(1, 1, 1, 1);
-      currentTint.g = enemyDistance / 5f;
-      currentTint.b = enemyDistance / 5f;
-      bloom.tint.value = currentTint;
       bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
     }
 
