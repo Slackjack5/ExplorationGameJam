@@ -54,7 +54,7 @@ public class GameCamera : MonoBehaviour
 
   private string FormatCounter()
   {
-    return inventory.PhotoCount + " / " + inventory.currentCapacity;
+    return inventory.PhotoCount + " / " + inventory.CurrentCapacity;
   }
 
   private Vector3 GetLocation(Ray lookRay)

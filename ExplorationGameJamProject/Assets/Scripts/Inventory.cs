@@ -17,11 +17,11 @@ public class Inventory : MonoBehaviour
   private List<Photo> photos;
   private GameObject selectedPhoto;
 
-  public int currentCapacity { get; private set; }
+  public int CurrentCapacity { get; private set; }
 
   public bool HasSpace
   {
-    get { return photos.Count < currentCapacity; }
+    get { return photos.Count < CurrentCapacity; }
   }
 
   public bool IsOpen {
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
 
   private void Start()
   {
-    currentCapacity = initialCapacity;
+    CurrentCapacity = initialCapacity;
     photos = new List<Photo>();
 
     inventoryPanel.SetActive(false);
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
 
   public void IncreaseCapacity()
   {
-    currentCapacity++;
+    CurrentCapacity++;
   }
 
   public void LosePhoto()
