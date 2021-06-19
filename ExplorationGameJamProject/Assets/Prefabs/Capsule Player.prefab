@@ -350,7 +350,10 @@ MonoBehaviour:
   lookSensitivity: 0.2
   maxInteractDistance: 1
   lerp: 0.1
+  respawnPositions: []
   pauseMenu: {fileID: 0}
+  volume: {fileID: 0}
+  enemy: {fileID: 0}
   shaderDelay: 4
 --- !u!143 &4449780693534710790
 CharacterController:
@@ -480,6 +483,7 @@ MonoBehaviour:
   whatIsMemory:
     serializedVersion: 2
     m_Bits: 128
+  photoCounterText: {fileID: 0}
   maxMemoryCaptureDistance: 5
 --- !u!114 &8878326280191244289
 MonoBehaviour:
@@ -498,3 +502,4 @@ MonoBehaviour:
   selectedPhotoPanel: {fileID: 0}
   photoShrinkFactor: 0.07
   selectedPhotoShrinkFactor: 0.5
+  initialCapacity: 3
