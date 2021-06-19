@@ -62,6 +62,20 @@ public class Inventory : MonoBehaviour
     currentCapacity++;
   }
 
+  public void LosePhoto()
+  {
+    int i = Utils.RandomInt(photos.Count);
+    Photo photo = photos[i];
+    photos.Remove(photo);
+    Destroy(photo.photoObject);
+    
+    if (selectedPhoto != null)
+    {
+      Destroy(selectedPhoto);
+      selectedPhoto = null;
+    }
+  }
+
   public void Toggle()
   {
     inventoryPanel.SetActive(!inventoryPanel.activeSelf);

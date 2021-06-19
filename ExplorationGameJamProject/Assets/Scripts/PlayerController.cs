@@ -266,5 +266,7 @@ public class PlayerController : MonoBehaviour
   {
     int i = Utils.RandomInt(respawnPositions.Count);
     transform.position = respawnPositions[i];
+
+    inventory.LosePhoto();
   }
 }
