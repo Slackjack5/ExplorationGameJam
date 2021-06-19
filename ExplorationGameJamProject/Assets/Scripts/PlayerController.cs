@@ -153,6 +153,14 @@ public class PlayerController : MonoBehaviour
 
   }
 
+  private void OnControllerColliderHit(ControllerColliderHit hit)
+  {
+    if (hit.gameObject.name == enemy.name)
+    {
+      Debug.Log("Touched enemy");
+    }
+  }
+
   IEnumerator NextFootstep()
   {
     yield return new WaitForSeconds(.6f);
