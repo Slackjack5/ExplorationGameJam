@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
+  [SerializeField] private List<Vector3> respawnPositions;
 
   // Private properties
   private float cameraRotationX;
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
   public GameObject pauseMenu;
   public Volume volume;
   public GameObject enemy;
+  private bool isEnemyHit;
   private float lookInputX;
   private float lookInputY;
   private float moveInputX;
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
     // Change bloom if enemy is close
     Vector2 playerXZ = new Vector2(transform.position.x, transform.position.z);
     Vector2 enemyXZ = new Vector2(enemy.transform.position.x, enemy.transform.position.z);
-    float enemyDistance = Math.Abs(Vector2.Distance(playerXZ, enemyXZ));
+    float enemyDistance = Mathf.Abs(Vector2.Distance(playerXZ, enemyXZ));
     if (enemyDistance < 5)
     {
       bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
@@ -153,10 +154,19 @@ public class PlayerController : MonoBehaviour
 
   }
 
+  private void OnControllerColliderHit(ControllerColliderHit hit)
+  {
+    if (hit.gameObject.name == enemy.name && !isEnemyHit)
+    {
+      isEnemyHit = true;
+      Respawn();
+      isEnemyHit = false;
+    }
+  }
+
   IEnumerator NextFootstep()
   {
     yield return new WaitForSeconds(.6f);
-    print("footstep");
     playingFootstep = false;
   }
 
@@ -173,7 +183,7 @@ public class PlayerController : MonoBehaviour
   {
     if (!pauseMenu.activeSelf)
     {
-      gameCamera.TakePhoto(getLookRay());
+      gameCamera.TakePhoto(GetLookRay());
     }
   }
 
@@ -225,7 +235,7 @@ public class PlayerController : MonoBehaviour
     }
   }
 
-  private Ray getLookRay()
+  private Ray GetLookRay()
   {
     Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
     return playerCamera.ViewportPointToRay(viewportCenterPoint);
@@ -249,6 +259,14 @@ public class PlayerController : MonoBehaviour
 
   private bool IsSeeingInteractable(out RaycastHit hit)
   {
-    return Physics.Raycast(getLookRay(), out hit, maxInteractDistance, whatIsInteractable);
+    return Physics.Raycast(GetLookRay(), out hit, maxInteractDistance, whatIsInteractable);
+  }
+
+  private void Respawn()
+  {
+    int i = Utils.RandomInt(respawnPositions.Count);
+    transform.position = respawnPositions[i];
+
+    inventory.LosePhoto();
   }
 }

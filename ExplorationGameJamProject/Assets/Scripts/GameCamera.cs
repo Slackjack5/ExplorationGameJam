@@ -54,7 +54,7 @@ public class GameCamera : MonoBehaviour
 
   private string FormatCounter()
   {
-    return inventory.PhotoCount + " / " + inventory.currentCapacity;
+    return inventory.PhotoCount + " / " + inventory.CurrentCapacity;
   }
 
   private Vector3 GetLocation(Ray lookRay)
@@ -64,6 +64,7 @@ public class GameCamera : MonoBehaviour
       return hit.transform.position;
     }
 
+    // Use the zero vector to indicate that the photo is not of a memory area
     return Vector3.zero;
   }
 }
