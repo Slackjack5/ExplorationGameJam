@@ -24,7 +24,11 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0ec15527ca60e64690b73ec945db71d2
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585779099714857690
+=======
+    m_lastTime: -8585779099945031092
+>>>>>>> Stashed changes
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +42,11 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e5c05e57856f7647bb011ee973d07dc2
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585775509790325945
+=======
+    m_lastTime: -8585779099945275531
+>>>>>>> Stashed changes
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -83,6 +91,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5b4c479a189c9143b5eedfae43b72f2e
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585775509790066638
     List:
     - name: Ambient
@@ -113,6 +122,10 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6985cedb2ba9e644b0e0dba57c3edb05
       Path: SoundBanks\Default Work Unit\Footsteps
+=======
+    m_lastTime: -8585779099945150759
+    List: []
+>>>>>>> Stashed changes
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -125,6 +138,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8b36f0e61bb82e4abaa6234a6c2b4941
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585775509791393076
     List:
     - name: Monster
@@ -161,6 +175,10 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.96603
       minDuration: 0.255593
+=======
+    m_lastTime: -8585779099945385238
+    List: []
+>>>>>>> Stashed changes
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -173,7 +191,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3598e0c42dfa894d84ae3f0e01b1cdbb
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585779099714987342
+=======
+    m_lastTime: -8585779099945365290
+>>>>>>> Stashed changes
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -187,7 +209,11 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: af2969335336be4ea1c2a662a31425bb
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585779099714867667
+=======
+    m_lastTime: -8585779099945080949
+>>>>>>> Stashed changes
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -201,6 +227,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 809fcc94d229514a85c3cf6fb361b47f
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585775509790056651
     List:
     - name: Footsteps
@@ -285,6 +312,10 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+=======
+    m_lastTime: -8585779099945070980
+    List: []
+>>>>>>> Stashed changes
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -297,7 +328,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 6256b0a22c972d469df37c76dc15f441
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585779099714857690
+=======
+    m_lastTime: -8585779099945070980
+>>>>>>> Stashed changes
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 010000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
