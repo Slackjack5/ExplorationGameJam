@@ -492,6 +492,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   photoCounterText: {fileID: 0}
+  errorText: {fileID: 0}
+  errorTime: 5
   maxMemoryCaptureDistance: 5
 --- !u!114 &8878326280191244289
 MonoBehaviour:
