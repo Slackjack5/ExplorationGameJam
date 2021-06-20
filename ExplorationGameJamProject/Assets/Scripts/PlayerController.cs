@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
   {
     if (!pauseMenu.activeSelf)
     {
-      gameCamera.TakePhoto(GetLookRay());
+      gameCamera.TakePhoto();
     }
   }
 
@@ -292,12 +292,6 @@ public class PlayerController : MonoBehaviour
     }
   }
 
-  private Ray GetLookRay()
-  {
-    Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
-    return playerCamera.ViewportPointToRay(viewportCenterPoint);
-  }
-
   private void Highlight(RaycastHit hit)
   {
     GameObject gameObject = hit.transform.gameObject;
@@ -316,7 +310,7 @@ public class PlayerController : MonoBehaviour
 
   private bool IsSeeingInteractable(out RaycastHit hit)
   {
-    return Physics.Raycast(GetLookRay(), out hit, maxInteractDistance, whatIsInteractable);
+    return Physics.Raycast(Utils.GetLookRay(playerCamera), out hit, maxInteractDistance, whatIsInteractable);
   }
 
   private void Respawn()

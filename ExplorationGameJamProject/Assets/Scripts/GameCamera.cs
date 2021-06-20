@@ -6,15 +6,25 @@ using TMPro;
 public class GameCamera : MonoBehaviour
 {
   // Unity Editor fields
+  [SerializeField] private Camera playerCamera;
   [SerializeField] private GameObject cameraCanvas;
+  [SerializeField] private GameObject invalidPhotoPanel;
+  [SerializeField] private GameObject validPhotoPanel;
   [SerializeField] private Enemy enemy;
   [SerializeField] private LayerMask whatIsEnemy;
   [SerializeField] private LayerMask whatIsMemory;
   [SerializeField] private TextMeshProUGUI photoCounterText;
+  [SerializeField] private GameObject errorText;
+  [SerializeField] private float errorTime = 5f;
   [SerializeField] private float maxMemoryCaptureDistance = 5f;
 
   // Private properties
   private Inventory inventory;
+
+  private bool IsValidPhoto
+  {
+    get { return validPhotoPanel.activeSelf; }
+  }
 
   // Start is called before the first frame update
   void Start()
@@ -22,25 +32,51 @@ public class GameCamera : MonoBehaviour
     inventory = GetComponent<Inventory>();
 
     cameraCanvas.SetActive(false);
+    errorText.SetActive(false);
+    validPhotoPanel.SetActive(false);
+    invalidPhotoPanel.SetActive(true);
   }
 
   private void Update()
   {
     photoCounterText.text = FormatCounter();
+
+    Ray lookRay = Utils.GetLookRay(playerCamera);
+    if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy) || Physics.Raycast(lookRay, out hit, maxMemoryCaptureDistance, whatIsMemory))
+    {
+      validPhotoPanel.SetActive(true);
+      invalidPhotoPanel.SetActive(false);
+    }
+    else
+    {
+      validPhotoPanel.SetActive(false);
+      invalidPhotoPanel.SetActive(true);
+    }
   }
 
-  public void TakePhoto(Ray lookRay)
+  public void TakePhoto()
   {
     if (cameraCanvas.activeSelf && !inventory.IsOpen && inventory.HasSpace)
     {
-      if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy))
+      if (IsValidPhoto)
       {
-        enemy.Respawn();
-      }
+        errorText.SetActive(false);
 
-      // Disable the camera UI so that it doesn't appear in screenshot
-      cameraCanvas.SetActive(false);
-      StartCoroutine(CaptureFrame(lookRay));
+        Ray lookRay = Utils.GetLookRay(playerCamera);
+        if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy))
+        {
+          enemy.Respawn();
+        }
+
+        // Disable the camera UI so that it doesn't appear in screenshot
+        cameraCanvas.SetActive(false);
+        StartCoroutine(CaptureFrame(lookRay));
+      }
+      else
+      {
+        errorText.SetActive(true);
+        StartCoroutine(ShowError());
+      }
     }
   }
 
@@ -73,5 +109,12 @@ public class GameCamera : MonoBehaviour
 
     // Use the zero vector to indicate that the photo is not of a memory area
     return Vector3.zero;
+  }
+
+  private IEnumerator ShowError()
+  {
+    yield return new WaitForSeconds(errorTime);
+
+    errorText.SetActive(false);
   }
 }
