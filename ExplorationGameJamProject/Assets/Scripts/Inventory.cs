@@ -16,7 +16,8 @@ public class Inventory : MonoBehaviour
   // Private properties
   private List<Photo> photos;
   private GameObject selectedPhoto;
-
+  private Vector3 selectedPhotoPos;
+  private bool photoHasBeenSelected;
   public int CurrentCapacity { get; private set; }
 
   public bool HasSpace
@@ -24,7 +25,8 @@ public class Inventory : MonoBehaviour
     get { return photos.Count < CurrentCapacity; }
   }
 
-  public bool IsOpen {
+  public bool IsOpen
+  {
     get { return inventoryPanel.activeSelf; }
   }
 
@@ -37,6 +39,7 @@ public class Inventory : MonoBehaviour
   {
     CurrentCapacity = initialCapacity;
     photos = new List<Photo>();
+    photoHasBeenSelected = false;
 
     inventoryPanel.SetActive(false);
   }
@@ -73,7 +76,7 @@ public class Inventory : MonoBehaviour
       photos.Remove(photo);
       Destroy(photo.photoObject);
     }
-    
+
     if (selectedPhoto != null)
     {
       Destroy(selectedPhoto);
@@ -88,9 +91,15 @@ public class Inventory : MonoBehaviour
     if (IsOpen)
     {
       Cursor.lockState = CursorLockMode.None;
+      photoHasBeenSelected = false;
     }
     else
     {
+      if (photoHasBeenSelected)
+      {
+        Shader.SetGlobalVector("_PhotoPoint", selectedPhotoPos);
+        Shader.SetGlobalFloat("_PhotoPointTime", Time.time);
+      }
       Cursor.lockState = CursorLockMode.Locked;
     }
   }
@@ -102,6 +111,8 @@ public class Inventory : MonoBehaviour
       Destroy(selectedPhoto);
     }
 
+    photoHasBeenSelected = true;
+    selectedPhotoPos = photo.location;
     selectedPhoto = Instantiate(photo.photoObject);
     selectedPhoto.GetComponent<Button>().enabled = false;
 
