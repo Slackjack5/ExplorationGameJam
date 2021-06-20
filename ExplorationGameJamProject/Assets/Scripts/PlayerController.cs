@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
   public GameObject pauseMenu;
   public Volume volume;
   public GameObject enemy;
-  private bool isEnemyHit;
   private float lookInputX;
   private float lookInputY;
   private float moveInputX;
@@ -158,13 +157,11 @@ public class PlayerController : MonoBehaviour
 
   }
 
-  private void OnControllerColliderHit(ControllerColliderHit hit)
+  private void OnTriggerEnter(Collider other)
   {
-    if (hit.gameObject.name == enemy.name && !isEnemyHit)
+    if (other.gameObject.name == enemy.name)
     {
-      isEnemyHit = true;
       Respawn();
-      isEnemyHit = false;
     }
   }
 

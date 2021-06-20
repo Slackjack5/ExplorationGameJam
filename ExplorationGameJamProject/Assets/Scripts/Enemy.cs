@@ -17,14 +17,6 @@ public class Enemy : MonoBehaviour
     transform.Translate(lookDirection * Time.deltaTime * speed);
   }
 
-  private void OnTriggerEnter(Collider other)
-  {
-    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
-    {
-      Respawn();
-    }
-  }
-
   public void Respawn()
   {
     int i = Utils.RandomInt(respawnPositions.Count);
