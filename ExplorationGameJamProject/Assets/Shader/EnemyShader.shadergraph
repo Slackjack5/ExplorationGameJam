@@ -3868,7 +3868,7 @@
     },
     "m_Name": "WobbleSpeed",
     "m_DefaultReferenceName": "Vector1_f793c6b19e8c464994263e2935aa569b",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_WobbleSpeed",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

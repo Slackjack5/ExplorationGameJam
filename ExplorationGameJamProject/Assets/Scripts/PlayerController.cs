@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +9,12 @@ public class PlayerController : MonoBehaviour
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
   [SerializeField] private LayerMask whatIsInteractable;
+  [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
+  [SerializeField] private List<Vector3> respawnPositions;
 
   // Private properties
   private float cameraRotationX;
@@ -27,6 +28,11 @@ public class PlayerController : MonoBehaviour
   private float moveInputZ;
   private Vector3 currentVelocity;
   private Bloom bloom;
+  private float deathTime;
+  private float respawnTime;
+  private bool hasJustDied;
+  private bool respawning;
+  private ColorAdjustments colorAdjustments;
 
   // Components
   private CharacterController characterController;
@@ -44,8 +50,9 @@ public class PlayerController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    // Load in bloom component
+    // Load in bloom and colorAdjustment component
     volume.profile.TryGet<Bloom>(out bloom);
+    volume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
     // Insure no shader nonsense at start of scene
     Vector3 offmap = new Vector3(9999999, 9999999, 9999999);
     Shader.SetGlobalVector("_Point1", offmap);
@@ -99,10 +106,51 @@ public class PlayerController : MonoBehaviour
     // Change bloom if enemy is close
     Vector2 playerXZ = new Vector2(transform.position.x, transform.position.z);
     Vector2 enemyXZ = new Vector2(enemy.transform.position.x, enemy.transform.position.z);
-    float enemyDistance = Math.Abs(Vector2.Distance(playerXZ, enemyXZ));
+    float enemyDistance = Mathf.Abs(Vector2.Distance(playerXZ, enemyXZ));
     if (enemyDistance < 5)
     {
       bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
+    }
+    else
+    {
+      bloom.intensity.value = 0.1f;
+    }
+
+    // Do fade to red if dying
+    if (Time.time - deathTime < 2 && hasJustDied)
+    {
+      Color redFade = new Color(1, 1 - (Time.time - deathTime) / 2, 1 - (Time.time - deathTime) / 2, 1);
+      float contrast = (Time.time - deathTime) / 2 * -100;
+      colorAdjustments.contrast.value = contrast;
+      colorAdjustments.colorFilter.value = redFade;
+    }
+    else if (Time.time - deathTime > 2 && hasJustDied)
+    {
+      int i = Utils.RandomInt(respawnPositions.Count);
+      transform.position = respawnPositions[i];
+      inventory.LosePhoto();
+      hasJustDied = false;
+      respawning = true;
+    }
+
+    // If not dead and colorAdjustments are set to dead state, fade back in.
+    if (!hasJustDied && deathTime != 0 && respawning == true)
+    {
+      respawnTime = Time.time;
+      respawning = false;
+    }
+
+    if (Time.time - respawnTime < 1 && !hasJustDied && respawnTime != 0)
+    {
+      Color redFade = new Color(1, (Time.time - respawnTime) / 1, (Time.time - respawnTime) / 1, 1);
+      float contrast = (1 - (Time.time - respawnTime) / 1) * -100;
+      colorAdjustments.contrast.value = contrast;
+      colorAdjustments.colorFilter.value = redFade;
+    }
+    else if (Time.time - respawnTime > 1 && !hasJustDied && respawnTime != 0)
+    {
+      colorAdjustments.contrast.value = 0;
+      colorAdjustments.colorFilter.value = new Color(1, 1, 1, 1);
     }
 
     // Look
@@ -153,10 +201,29 @@ public class PlayerController : MonoBehaviour
 
   }
 
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      enemy.GetComponent<Enemy>().Suppress();
+    }
+    else if (other.gameObject.name == enemy.name)
+    {
+      Respawn();
+    }
+  }
+
+  private void OnTriggerExit(Collider other)
+  {
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      enemy.GetComponent<Enemy>().Activate();
+    }
+  }
+
   IEnumerator NextFootstep()
   {
     yield return new WaitForSeconds(.6f);
-    print("footstep");
     playingFootstep = false;
   }
 
@@ -173,7 +240,7 @@ public class PlayerController : MonoBehaviour
   {
     if (!pauseMenu.activeSelf)
     {
-      gameCamera.TakePhoto(getLookRay());
+      gameCamera.TakePhoto();
     }
   }
 
@@ -182,7 +249,7 @@ public class PlayerController : MonoBehaviour
     if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
       inventory.IncreaseCapacity();
-      Destroy(hit.transform.gameObject);
+      hit.transform.gameObject.GetComponent<Interactable>().Interact();
     }
   }
 
@@ -225,12 +292,6 @@ public class PlayerController : MonoBehaviour
     }
   }
 
-  private Ray getLookRay()
-  {
-    Vector3 viewportCenterPoint = new Vector3(0.5f, 0.5f);
-    return playerCamera.ViewportPointToRay(viewportCenterPoint);
-  }
-
   private void Highlight(RaycastHit hit)
   {
     GameObject gameObject = hit.transform.gameObject;
@@ -249,6 +310,12 @@ public class PlayerController : MonoBehaviour
 
   private bool IsSeeingInteractable(out RaycastHit hit)
   {
-    return Physics.Raycast(getLookRay(), out hit, maxInteractDistance, whatIsInteractable);
+    return Physics.Raycast(Utils.GetLookRay(playerCamera), out hit, maxInteractDistance, whatIsInteractable);
+  }
+
+  private void Respawn()
+  {
+    deathTime = Time.time;
+    hasJustDied = true;
   }
 }

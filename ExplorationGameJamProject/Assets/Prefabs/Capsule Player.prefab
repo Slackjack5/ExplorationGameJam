@@ -346,11 +346,15 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 64
+  memoryArea: Memory Area
   baseSpeed: 6
   lookSensitivity: 0.2
   maxInteractDistance: 1
   lerp: 0.1
+  respawnPositions: []
   pauseMenu: {fileID: 0}
+  volume: {fileID: 0}
+  enemy: {fileID: 0}
   shaderDelay: 4
 --- !u!143 &4449780693534710790
 CharacterController:
@@ -476,10 +480,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f8858c55846eb4d8cc9a83f894f29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 4449780691627143075}
   cameraCanvas: {fileID: 0}
+  invalidPhotoPanel: {fileID: 0}
+  validPhotoPanel: {fileID: 0}
+  enemy: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
   whatIsMemory:
     serializedVersion: 2
     m_Bits: 128
+  photoCounterText: {fileID: 0}
+  errorText: {fileID: 0}
+  errorTime: 5
   maxMemoryCaptureDistance: 5
 --- !u!114 &8878326280191244289
 MonoBehaviour:
@@ -498,3 +512,4 @@ MonoBehaviour:
   selectedPhotoPanel: {fileID: 0}
   photoShrinkFactor: 0.07
   selectedPhotoShrinkFactor: 0.5
+  initialCapacity: 3
