@@ -6,7 +6,10 @@ using TMPro;
 public class GameCamera : MonoBehaviour
 {
   // Unity Editor fields
+  [SerializeField] private Camera playerCamera;
   [SerializeField] private GameObject cameraCanvas;
+  [SerializeField] private GameObject invalidPhotoPanel;
+  [SerializeField] private GameObject validPhotoPanel;
   [SerializeField] private Enemy enemy;
   [SerializeField] private LayerMask whatIsEnemy;
   [SerializeField] private LayerMask whatIsMemory;
@@ -22,15 +25,30 @@ public class GameCamera : MonoBehaviour
     inventory = GetComponent<Inventory>();
 
     cameraCanvas.SetActive(false);
+    validPhotoPanel.SetActive(false);
+    invalidPhotoPanel.SetActive(true);
   }
 
   private void Update()
   {
     photoCounterText.text = FormatCounter();
+
+    Ray lookRay = Utils.GetLookRay(playerCamera);
+    if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy) || Physics.Raycast(lookRay, out hit, maxMemoryCaptureDistance, whatIsMemory))
+    {
+      validPhotoPanel.SetActive(true);
+      invalidPhotoPanel.SetActive(false);
+    }
+    else
+    {
+      validPhotoPanel.SetActive(false);
+      invalidPhotoPanel.SetActive(true);
+    }
   }
 
-  public void TakePhoto(Ray lookRay)
+  public void TakePhoto()
   {
+    Ray lookRay = Utils.GetLookRay(playerCamera);
     if (cameraCanvas.activeSelf && !inventory.IsOpen && inventory.HasSpace)
     {
       if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy))
