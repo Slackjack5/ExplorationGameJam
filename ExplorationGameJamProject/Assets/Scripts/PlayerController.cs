@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
   private float moveInputZ;
   private Vector3 currentVelocity;
   private Bloom bloom;
+  private float deathTime;
+  private float respawnTime;
+  private bool hasJustDied;
+  private bool respawning;
+  private ColorAdjustments colorAdjustments;
 
   // Components
   private CharacterController characterController;
@@ -45,8 +50,9 @@ public class PlayerController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    // Load in bloom component
+    // Load in bloom and colorAdjustment component
     volume.profile.TryGet<Bloom>(out bloom);
+    volume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
     // Insure no shader nonsense at start of scene
     Vector3 offmap = new Vector3(9999999, 9999999, 9999999);
     Shader.SetGlobalVector("_Point1", offmap);
@@ -108,6 +114,43 @@ public class PlayerController : MonoBehaviour
     else
     {
       bloom.intensity.value = 0.1f;
+    }
+
+    // Do fade to red if dying
+    if (Time.time - deathTime < 2 && hasJustDied)
+    {
+      Color redFade = new Color(1, 1 - (Time.time - deathTime) / 2, 1 - (Time.time - deathTime) / 2, 1);
+      float contrast = (Time.time - deathTime) / 2 * -100;
+      colorAdjustments.contrast.value = contrast;
+      colorAdjustments.colorFilter.value = redFade;
+    }
+    else if (Time.time - deathTime > 2 && hasJustDied)
+    {
+      int i = Utils.RandomInt(respawnPositions.Count);
+      transform.position = respawnPositions[i];
+      inventory.LosePhoto();
+      hasJustDied = false;
+      respawning = true;
+    }
+
+    // If not dead and colorAdjustments are set to dead state, fade back in.
+    if (!hasJustDied && deathTime != 0 && respawning == true)
+    {
+      respawnTime = Time.time;
+      respawning = false;
+    }
+
+    if (Time.time - respawnTime < 1 && !hasJustDied && respawnTime != 0)
+    {
+      Color redFade = new Color(1, (Time.time - respawnTime) / 1, (Time.time - respawnTime) / 1, 1);
+      float contrast = (1 - (Time.time - respawnTime) / 1) * -100;
+      colorAdjustments.contrast.value = contrast;
+      colorAdjustments.colorFilter.value = redFade;
+    }
+    else if (Time.time - respawnTime > 1 && !hasJustDied && respawnTime != 0)
+    {
+      colorAdjustments.contrast.value = 0;
+      colorAdjustments.colorFilter.value = new Color(1, 1, 1, 1);
     }
 
     // Look
@@ -278,9 +321,7 @@ public class PlayerController : MonoBehaviour
 
   private void Respawn()
   {
-    int i = Utils.RandomInt(respawnPositions.Count);
-    transform.position = respawnPositions[i];
-
-    inventory.LosePhoto();
+    deathTime = Time.time;
+    hasJustDied = true;
   }
 }
