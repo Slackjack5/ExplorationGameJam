@@ -44,17 +44,19 @@ public class Inventory : MonoBehaviour
   public void AddPhoto(Sprite sprite, Vector3 location)
   {
     GameObject photoObject = new GameObject();
+    Photo photo = new Photo(photoObject, location);
+
     Image image = photoObject.AddComponent<Image>();
     image.sprite = sprite;
 
     Button button = photoObject.AddComponent<Button>();
-    button.onClick.AddListener(() => Select(photoObject));
+    button.onClick.AddListener(() => Select(photo));
 
     RectTransform rectTransform = photoObject.GetComponent<RectTransform>();
     rectTransform.SetParent(sidebar.transform);
     rectTransform.sizeDelta = photoShrinkFactor * new Vector2(sprite.texture.width, sprite.texture.height);
 
-    photos.Add(new Photo(photoObject, location));
+    photos.Add(photo);
   }
 
   public void IncreaseCapacity()
@@ -93,14 +95,14 @@ public class Inventory : MonoBehaviour
     }
   }
 
-  private void Select(GameObject photo)
+  private void Select(Photo photo)
   {
     if (selectedPhoto != null)
     {
       Destroy(selectedPhoto);
     }
 
-    selectedPhoto = Instantiate(photo);
+    selectedPhoto = Instantiate(photo.photoObject);
     selectedPhoto.GetComponent<Button>().enabled = false;
 
     Image image = selectedPhoto.GetComponent<Image>();
