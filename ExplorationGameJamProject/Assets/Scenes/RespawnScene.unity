@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.75
+  m_fontSize: 46.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1644,7 +1644,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1
+        m_Name: SpawnRate
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1677,8 +1680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa356eaa68cf6747a127e51c412fac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPositions: []
+  aggro: 1
   followObject: {fileID: 300453321}
-  speed: 0.4
+  enemyMaterial: {fileID: 2100000, guid: c47088b15c98ae54f960908639b6b4c3, type: 2}
 --- !u!108 &1121401856
 Light:
   m_ObjectHideFlags: 0
@@ -1691,8 +1696,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2023,7 +2028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.86, y: 0.8454834}
   m_AnchorMax: {x: 0.96900004, y: 0.94513893}
-  m_AnchoredPosition: {x: -0.09310913, y: -0.53471375}
+  m_AnchoredPosition: {x: -0.09313965, y: -0.5346985}
   m_SizeDelta: {x: 0.40570068, y: -1.515686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410651992
