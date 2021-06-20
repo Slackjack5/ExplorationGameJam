@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
   [SerializeField] private LayerMask whatIsInteractable;
+  [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
   public GameObject pauseMenu;
   public Volume volume;
   public GameObject enemy;
-  private bool isEnemyHit;
   private float lookInputX;
   private float lookInputY;
   private float moveInputX;
@@ -105,6 +105,10 @@ public class PlayerController : MonoBehaviour
     {
       bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
     }
+    else
+    {
+      bloom.intensity.value = 0.1f;
+    }
 
     // Look
     if (IsGameActive())
@@ -154,13 +158,23 @@ public class PlayerController : MonoBehaviour
 
   }
 
-  private void OnControllerColliderHit(ControllerColliderHit hit)
+  private void OnTriggerEnter(Collider other)
   {
-    if (hit.gameObject.name == enemy.name && !isEnemyHit)
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
     {
-      isEnemyHit = true;
+      enemy.GetComponent<Enemy>().Suppress();
+    }
+    else if (other.gameObject.name == enemy.name)
+    {
       Respawn();
-      isEnemyHit = false;
+    }
+  }
+
+  private void OnTriggerExit(Collider other)
+  {
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      enemy.GetComponent<Enemy>().Activate();
     }
   }
 

@@ -346,6 +346,7 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 64
+  memoryArea: Memory Area
   baseSpeed: 6
   lookSensitivity: 0.2
   maxInteractDistance: 1
