@@ -1684,7 +1684,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPositions:
   - {x: 0, y: 3, z: -20}
-  memoryArea: Memory Area
   followObject: {fileID: 300453321}
   speed: 0.4
 --- !u!108 &1121401856

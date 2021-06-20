@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
   [SerializeField] private LayerMask whatIsInteractable;
+  [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
@@ -159,9 +160,21 @@ public class PlayerController : MonoBehaviour
 
   private void OnTriggerEnter(Collider other)
   {
-    if (other.gameObject.name == enemy.name)
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      enemy.GetComponent<Enemy>().Suppress();
+    }
+    else if (other.gameObject.name == enemy.name)
     {
       Respawn();
+    }
+  }
+
+  private void OnTriggerExit(Collider other)
+  {
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      enemy.GetComponent<Enemy>().Activate();
     }
   }
 
