@@ -480,6 +480,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraCanvas: {fileID: 0}
+  enemy: {fileID: 0}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
   whatIsMemory:
     serializedVersion: 2
     m_Bits: 128

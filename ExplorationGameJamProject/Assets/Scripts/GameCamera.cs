@@ -7,6 +7,8 @@ public class GameCamera : MonoBehaviour
 {
   // Unity Editor fields
   [SerializeField] private GameObject cameraCanvas;
+  [SerializeField] private Enemy enemy;
+  [SerializeField] private LayerMask whatIsEnemy;
   [SerializeField] private LayerMask whatIsMemory;
   [SerializeField] private TextMeshProUGUI photoCounterText;
   [SerializeField] private float maxMemoryCaptureDistance = 5f;
@@ -31,6 +33,11 @@ public class GameCamera : MonoBehaviour
   {
     if (cameraCanvas.activeSelf && !inventory.IsOpen && inventory.HasSpace)
     {
+      if (Physics.Raycast(lookRay, out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy))
+      {
+        enemy.Respawn();
+      }
+
       // Disable the camera UI so that it doesn't appear in screenshot
       cameraCanvas.SetActive(false);
       StartCoroutine(CaptureFrame(lookRay));

@@ -23,12 +23,8 @@ MonoBehaviour:
       guid: 0ec15527ca60e64690b73ec945db71d2
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0ec15527ca60e64690b73ec945db71d2
-    GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585779099714857690
-=======
+    GuidInternal:
     m_lastTime: -8585779099945031092
->>>>>>> Stashed changes
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -117,10 +113,8 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6985cedb2ba9e644b0e0dba57c3edb05
       Path: SoundBanks\Default Work Unit\Footsteps
-=======
     m_lastTime: -8585779099945150759
     List: []
->>>>>>> Stashed changes
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -169,10 +163,8 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.96603
       minDuration: 0.255593
-=======
     m_lastTime: -8585779099945385238
     List: []
->>>>>>> Stashed changes
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -185,11 +177,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3598e0c42dfa894d84ae3f0e01b1cdbb
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585779099714987342
-=======
     m_lastTime: -8585779099945365290
->>>>>>> Stashed changes
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -203,11 +191,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: af2969335336be4ea1c2a662a31425bb
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585779099714867667
-=======
     m_lastTime: -8585779099945080949
->>>>>>> Stashed changes
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -305,10 +289,8 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-=======
     m_lastTime: -8585779099945070980
     List: []
->>>>>>> Stashed changes
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -321,11 +303,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 6256b0a22c972d469df37c76dc15f441
     GuidInternal: 
-<<<<<<< Updated upstream
-    m_lastTime: -8585779099714857690
-=======
     m_lastTime: -8585779099945070980
->>>>>>> Stashed changes
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 010000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
