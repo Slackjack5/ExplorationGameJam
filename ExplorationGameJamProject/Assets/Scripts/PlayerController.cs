@@ -105,6 +105,10 @@ public class PlayerController : MonoBehaviour
     {
       bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
     }
+    else
+    {
+      bloom.intensity.value = 0.1f;
+    }
 
     // Look
     if (IsGameActive())
