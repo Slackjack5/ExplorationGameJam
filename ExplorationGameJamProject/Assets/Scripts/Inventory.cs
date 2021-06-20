@@ -64,10 +64,13 @@ public class Inventory : MonoBehaviour
 
   public void LosePhoto()
   {
-    int i = Utils.RandomInt(photos.Count);
-    Photo photo = photos[i];
-    photos.Remove(photo);
-    Destroy(photo.photoObject);
+    if (photos.Count > 0)
+    {
+      int i = Utils.RandomInt(photos.Count);
+      Photo photo = photos[i];
+      photos.Remove(photo);
+      Destroy(photo.photoObject);
+    }
     
     if (selectedPhoto != null)
     {
