@@ -23,7 +23,7 @@ MonoBehaviour:
       guid: 0ec15527ca60e64690b73ec945db71d2
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 0ec15527ca60e64690b73ec945db71d2
-    GuidInternal:
+    GuidInternal: 
     m_lastTime: -8585779099945031092
     List: []
   AuxBusWwu:
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e5c05e57856f7647bb011ee973d07dc2
     GuidInternal: 
-    m_lastTime: -8585775327996474839
+    m_lastTime: -8585774123696050064
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5b4c479a189c9143b5eedfae43b72f2e
     GuidInternal: 
-    m_lastTime: -8585775327995736828
+    m_lastTime: -8585774123693165059
     List:
     - name: Ambient
       guid: a1f84d864d7b1646b91725cba03ae02b
@@ -113,8 +113,6 @@ MonoBehaviour:
         ObjectType: 7
         guid: 6985cedb2ba9e644b0e0dba57c3edb05
       Path: SoundBanks\Default Work Unit\Footsteps
-    m_lastTime: -8585779099945150759
-    List: []
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -127,7 +125,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8b36f0e61bb82e4abaa6234a6c2b4941
     GuidInternal: 
-    m_lastTime: -8585775327998110469
+    m_lastTime: -8585774123722659174
     List:
     - name: Monster
       guid: 22f799e3168a354697cc2b042d1a9daa
@@ -163,8 +161,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.96603
       minDuration: 0.255593
-    m_lastTime: -8585779099945385238
-    List: []
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -205,7 +201,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 809fcc94d229514a85c3cf6fb361b47f
     GuidInternal: 
-    m_lastTime: -8585775327995587208
+    m_lastTime: -8585774123692653108
     List:
     - name: Footsteps
       guid: 32659597acf01d49b49ec0410162682d
@@ -289,8 +285,6 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-    m_lastTime: -8585779099945070980
-    List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:

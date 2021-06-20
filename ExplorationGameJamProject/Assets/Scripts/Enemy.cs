@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
   [SerializeField] private List<Vector3> respawnPositions;
+  [SerializeField] private string memoryArea;
 
   public GameObject followObject;
   public float speed;
@@ -14,6 +15,14 @@ public class Enemy : MonoBehaviour
   {
     lookDirection = Vector3.Normalize(followObject.transform.position - transform.position);
     transform.Translate(lookDirection * Time.deltaTime * speed);
+  }
+
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.layer == LayerMask.NameToLayer(memoryArea))
+    {
+      Respawn();
+    }
   }
 
   public void Respawn()
