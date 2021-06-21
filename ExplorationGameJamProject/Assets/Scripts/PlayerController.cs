@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
-  [SerializeField] private List<Vector3> respawnPositions;
+  [SerializeField] private List<Transform> respawnPositions;
   [SerializeField] private GameObject cameraPivot;
   [SerializeField] private Animator myAnimator;
 
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
     else if (Time.time - deathTime > 2 && hasJustDied)
     {
       int i = Utils.RandomInt(respawnPositions.Count);
-      transform.position = respawnPositions[i];
+      transform.position = respawnPositions[i].position;
       inventory.LosePhoto();
       hasJustDied = false;
       respawning = true;
