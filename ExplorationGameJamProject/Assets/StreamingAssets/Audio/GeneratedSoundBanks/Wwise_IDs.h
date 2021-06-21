@@ -13,8 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID FADE_AMBIENCEDOWN = 3726615666U;
+        static const AkUniqueID FADE_AMBIENCEUP = 2868361841U;
         static const AkUniqueID MONSTER = 2376328173U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
+        static const AkUniqueID PLAY_GRIVANCEZONES = 152278570U;
+        static const AkUniqueID PLAY_PAD = 2822502029U;
+        static const AkUniqueID PLAY_RANDOMMUSIC = 3382723624U;
+        static const AkUniqueID PLAY_SPOOKY = 1750065161U;
+        static const AkUniqueID STOP_PLAYLIST = 3444384738U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -32,7 +39,27 @@ namespace AK
             } // namespace SWITCH
         } // namespace FOOTSTEPS
 
+        namespace GRIEVINGZONES
+        {
+            static const AkUniqueID GROUP = 109497315U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ZONE1 = 831766780U;
+                static const AkUniqueID ZONE2 = 831766783U;
+                static const AkUniqueID ZONE3 = 831766782U;
+                static const AkUniqueID ZONE4 = 831766777U;
+                static const AkUniqueID ZONE5 = 831766776U;
+                static const AkUniqueID ZONE6 = 831766779U;
+            } // namespace SWITCH
+        } // namespace GRIEVINGZONES
+
     } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID AUDIO_DUCKING = 954015593U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
@@ -43,7 +70,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIENCE = 85412153U;
+        static const AkUniqueID ENVIRONMENT = 1229948536U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

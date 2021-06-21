@@ -38,8 +38,42 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e5c05e57856f7647bb011ee973d07dc2
     GuidInternal: 
-    m_lastTime: -8585772893260501684
+    m_lastTime: -8585773072678527461
     List:
+    - name: Ambience
+      guid: 1ab0670e4575a4409524333e7fcc2f4f
+      id: 85412153
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e5c05e57856f7647bb011ee973d07dc2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Ambience
+        ObjectType: 2
+        guid: 1ab0670e4575a4409524333e7fcc2f4f
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Ambience
+    - name: Environment
+      guid: 92fddfb468f34c4abf4834420b1a9daf
+      id: 1229948536
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e5c05e57856f7647bb011ee973d07dc2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Environment
+        ObjectType: 2
+        guid: 92fddfb468f34c4abf4834420b1a9daf
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Environment
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -54,6 +88,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 073779d4cc44e4448355e02ee127285c
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e5c05e57856f7647bb011ee973d07dc2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 073779d4cc44e4448355e02ee127285c
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
     - name: Reverb
       guid: b1d2996fd0450444a5e07bdc4d17714b
       id: 348963605
@@ -83,7 +134,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5b4c479a189c9143b5eedfae43b72f2e
     GuidInternal: 
-    m_lastTime: -8585772893258549526
+    m_lastTime: -8585773072677948982
     List:
     - name: Ambient
       guid: a1f84d864d7b1646b91725cba03ae02b
@@ -125,7 +176,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8b36f0e61bb82e4abaa6234a6c2b4941
     GuidInternal: 
-    m_lastTime: -8585772893263518723
+    m_lastTime: -8585773072678128404
     List:
     - name: Monster
       guid: 22f799e3168a354697cc2b042d1a9daa
@@ -161,6 +212,91 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.96603
       minDuration: 0.255593
+    - name: Play_GrivanceZones
+      guid: b71bac5de869f049aa8a25d00f288385
+      id: 152278570
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Play_GrivanceZones
+        ObjectType: 3
+        guid: b71bac5de869f049aa8a25d00f288385
+      Path: Events\Default Work Unit\Play_GrivanceZones
+      maxAttenuation: 100
+      maxDuration: 41.813354
+      minDuration: 36.57415
+    - name: Play_Pad
+      guid: 570ab89b2f2af54aa8a23f71c6ddc5db
+      id: 2822502029
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Play_Pad
+        ObjectType: 3
+        guid: 570ab89b2f2af54aa8a23f71c6ddc5db
+      Path: Events\Default Work Unit\Play_Pad
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_RandomMusic
+      guid: 99bebc60ff9e3147b91a8729ea710468
+      id: 3382723624
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Play_RandomMusic
+        ObjectType: 3
+        guid: 99bebc60ff9e3147b91a8729ea710468
+      Path: Events\Default Work Unit\Play_RandomMusic
+      maxAttenuation: 0
+      maxDuration: 68.93619
+      minDuration: 33
+    - name: Play_Spooky
+      guid: d4a863458e983242b56900aa4b40aa2f
+      id: 1750065161
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Play_Spooky
+        ObjectType: 3
+        guid: d4a863458e983242b56900aa4b40aa2f
+      Path: Events\Default Work Unit\Play_Spooky
+      maxAttenuation: 0
+      maxDuration: 24.648912
+      minDuration: 13.216825
+    - name: Set_Voice_Volume_Ambience
+      guid: 0b8baea8798d844fbbe27d06d45c9e82
+      id: 1131897480
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Set_Voice_Volume_Ambience
+        ObjectType: 3
+        guid: 0b8baea8798d844fbbe27d06d45c9e82
+      Path: Events\Default Work Unit\Set_Voice_Volume_Ambience
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -173,8 +309,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3598e0c42dfa894d84ae3f0e01b1cdbb
     GuidInternal: 
-    m_lastTime: -8585779099714987342
-    List: []
+    m_lastTime: -8585773094120112109
+    List:
+    - name: Audio_Ducking
+      guid: bd14ec17a86613428450672975f74813
+      id: 954015593
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3598e0c42dfa894d84ae3f0e01b1cdbb
+      - ElementName: Audio_Ducking
+        ObjectType: 13
+        guid: bd14ec17a86613428450672975f74813
+      Path: Game Parameters\Default Work Unit\Audio_Ducking
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -201,7 +351,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 809fcc94d229514a85c3cf6fb361b47f
     GuidInternal: 
-    m_lastTime: -8585772893258539556
+    m_lastTime: -8585773080861190583
     List:
     - name: Footsteps
       guid: 32659597acf01d49b49ec0410162682d
@@ -282,6 +432,120 @@ MonoBehaviour:
         - ElementName: Wood
           ObjectType: 10
           guid: 467033386dc8c44585fd066ca1f9118f
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: GrievingZones
+      guid: 2370879b79f40740b02164822a6bd429
+      id: 109497315
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 809fcc94d229514a85c3cf6fb361b47f
+      - ElementName: GrievingZones
+        ObjectType: 11
+        guid: 2370879b79f40740b02164822a6bd429
+      Path: Switches\Default Work Unit\GrievingZones
+      values:
+      - name: Zone1
+        guid: 383797c40122544487d14608acf803dc
+        id: 831766780
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone1
+          ObjectType: 10
+          guid: 383797c40122544487d14608acf803dc
+      - name: Zone2
+        guid: 0d064958c7c39e4f8fae7be068d35764
+        id: 831766783
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone2
+          ObjectType: 10
+          guid: 0d064958c7c39e4f8fae7be068d35764
+      - name: Zone3
+        guid: 305d59c3404fbc4686e042437ff072cc
+        id: 831766782
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone3
+          ObjectType: 10
+          guid: 305d59c3404fbc4686e042437ff072cc
+      - name: Zone4
+        guid: 9efdbd4323fe934e878db0ce41d527c9
+        id: 831766777
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone4
+          ObjectType: 10
+          guid: 9efdbd4323fe934e878db0ce41d527c9
+      - name: Zone5
+        guid: 9be422f124a1814580382b7d07eaf06d
+        id: 831766776
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone5
+          ObjectType: 10
+          guid: 9be422f124a1814580382b7d07eaf06d
+      - name: Zone6
+        guid: 4af74c863c2e784db8c81cb9a889bf16
+        id: 831766779
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 809fcc94d229514a85c3cf6fb361b47f
+        - ElementName: GrievingZones
+          ObjectType: 11
+          guid: 2370879b79f40740b02164822a6bd429
+        - ElementName: Zone6
+          ObjectType: 10
+          guid: 4af74c863c2e784db8c81cb9a889bf16
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []

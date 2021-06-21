@@ -1,10 +1,17 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	954015593	Audio_Ducking			\Default Work Unit\Audio_Ducking	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
+	1229948536	Environment			\Default Work Unit\Master Audio Bus\Environment	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	348963605	Reverb			\Default Work Unit\Master Audio Bus\Reverb	
 
 Effect plug-ins	ID	Name	Type				Notes
+	1992114213	Sidechain_Meter	Wwise Meter			
 	2662085913	Large_Church1	Wwise Matrix Reverb			
 
 Audio Devices	ID	Name	Type				Notes
