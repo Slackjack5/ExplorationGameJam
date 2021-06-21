@@ -22,6 +22,11 @@ public class GameCamera : MonoBehaviour
   // Private properties
   private Inventory inventory;
 
+  public bool IsEquipped
+  {
+    get { return cameraCanvas.activeSelf; }
+  }
+
   private bool IsValidPhoto
   {
     get { return validPhotoPanel.activeSelf; }
