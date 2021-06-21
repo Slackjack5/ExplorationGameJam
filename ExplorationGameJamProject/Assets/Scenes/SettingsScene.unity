@@ -2416,7 +2416,7 @@ GameObject:
   - component: {fileID: 1797539946}
   - component: {fileID: 1797539945}
   m_Layer: 0
-  m_Name: VolumeControls
+  m_Name: SettingControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

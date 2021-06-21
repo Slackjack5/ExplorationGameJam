@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -12,12 +13,15 @@ public class Inventory : MonoBehaviour
   [SerializeField] private float photoShrinkFactor = 0.07f;
   [SerializeField] private float selectedPhotoShrinkFactor = 0.5f;
   [SerializeField] private int initialCapacity = 3;
+  [SerializeField] private List<Transform> memoryAreas;
 
   // Private properties
   private List<Photo> photos;
   private GameObject selectedPhoto;
   private Vector3 selectedPhotoPos;
   private bool photoHasBeenSelected;
+  private HashSet<Vector3> requiredLocations;
+
   public int CurrentCapacity { get; private set; }
 
   public bool HasSpace
@@ -42,6 +46,13 @@ public class Inventory : MonoBehaviour
     photoHasBeenSelected = false;
 
     inventoryPanel.SetActive(false);
+
+    // Initialize the set of required locations to win
+    requiredLocations = new HashSet<Vector3>();
+    foreach (Transform transform in memoryAreas)
+    {
+      requiredLocations.Add(transform.position);
+    }
   }
 
   public void AddPhoto(Sprite sprite, Vector3 location)
@@ -61,6 +72,8 @@ public class Inventory : MonoBehaviour
     rectTransform.sizeDelta = photoShrinkFactor * new Vector2(sprite.texture.width, sprite.texture.height);
 
     photos.Add(photo);
+
+    CheckWinCondition();
   }
 
   public void IncreaseCapacity()
@@ -102,6 +115,20 @@ public class Inventory : MonoBehaviour
         Shader.SetGlobalFloat("_PhotoPointTime", Time.time);
       }
       Cursor.lockState = CursorLockMode.Locked;
+    }
+  }
+
+  private void CheckWinCondition()
+  {
+    HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
+    foreach (Photo photo in photos)
+    {
+      collectedLocations.Add(photo.location);
+    }
+
+    if (collectedLocations.Count > 0 && collectedLocations.SetEquals(requiredLocations))
+    {
+      SceneManager.LoadScene("YouWin");
     }
   }
 

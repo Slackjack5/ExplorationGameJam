@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
-  [SerializeField] private List<Vector3> respawnPositions;
+  [SerializeField] private List<Transform> respawnPositions;
   [SerializeField] private GameObject cameraPivot;
   [SerializeField] private Animator myAnimator;
 
@@ -131,8 +131,11 @@ public class PlayerController : MonoBehaviour
     else if (Time.time - deathTime > 2 && hasJustDied)
     {
       int i = Utils.RandomInt(respawnPositions.Count);
-      transform.position = respawnPositions[i];
+      transform.position = respawnPositions[i].position;
+
       inventory.LosePhoto();
+      enemy.GetComponent<Enemy>().Respawn();
+
       hasJustDied = false;
       respawning = true;
     }
@@ -235,7 +238,6 @@ public class PlayerController : MonoBehaviour
   {
     pauseMenu.SetActive(!pauseMenu.activeSelf);
     Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
-    Cursor.visible = pauseMenu.activeSelf;
     Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
   }
 
@@ -252,8 +254,12 @@ public class PlayerController : MonoBehaviour
   {
     if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
-      inventory.IncreaseCapacity();
-      hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
+      if (interactable.IsActive)
+      {
+        inventory.IncreaseCapacity();
+        hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      }
     }
   }
 
