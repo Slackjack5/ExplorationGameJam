@@ -47,7 +47,8 @@ public class Inventory : MonoBehaviour
   public void AddPhoto(Sprite sprite, Vector3 location)
   {
     GameObject photoObject = new GameObject();
-    Photo photo = new Photo(photoObject, location);
+    bool isMemory = location != Vector3.zero;
+    Photo photo = new Photo(photoObject, location, isMemory);
 
     Image image = photoObject.AddComponent<Image>();
     image.sprite = sprite;
