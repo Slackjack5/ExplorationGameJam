@@ -252,8 +252,12 @@ public class PlayerController : MonoBehaviour
   {
     if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
-      inventory.IncreaseCapacity();
-      hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
+      if (interactable.IsActive)
+      {
+        inventory.IncreaseCapacity();
+        hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      }
     }
   }
 

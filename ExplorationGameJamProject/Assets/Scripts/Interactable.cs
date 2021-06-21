@@ -6,6 +6,11 @@ public class Interactable : MonoBehaviour
 {
   [SerializeField] private float respawnTime = 60f;
 
+  public bool IsActive
+  {
+    get { return GetComponent<MeshRenderer>().enabled; }
+  }
+
   public void Interact()
   {
     GetComponent<MeshRenderer>().enabled = false;
