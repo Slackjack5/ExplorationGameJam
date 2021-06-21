@@ -132,7 +132,10 @@ public class PlayerController : MonoBehaviour
     {
       int i = Utils.RandomInt(respawnPositions.Count);
       transform.position = respawnPositions[i].position;
+
       inventory.LosePhoto();
+      enemy.GetComponent<Enemy>().Respawn();
+
       hasJustDied = false;
       respawning = true;
     }
