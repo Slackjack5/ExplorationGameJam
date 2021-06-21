@@ -1841,7 +1841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPositions:
   - {x: 0, y: 3, z: -20}
-  aggro: 1
+  aggroAcceleration: 0.1
+  maxSpeed: 4
   followObject: {fileID: 300453321}
   enemyMaterial: {fileID: 2100000, guid: c47088b15c98ae54f960908639b6b4c3, type: 2}
 --- !u!108 &1121401856
