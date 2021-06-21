@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
   [SerializeField] private List<Vector3> respawnPositions;
+  [SerializeField] private GameObject cameraPivot;
+  [SerializeField] private Animator myAnimator;
 
   // Private properties
   private float cameraRotationX;
@@ -72,6 +74,8 @@ public class PlayerController : MonoBehaviour
 
     Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
+
+    cameraPivot.SetActive(false);
   }
 
   // Update is called once per frame
@@ -279,7 +283,16 @@ public class PlayerController : MonoBehaviour
   {
     if (IsGameActive())
     {
-      gameCamera.Toggle();
+      if (!gameCamera.IsEquipped)
+      {
+        // Animate equipping of camera
+        cameraPivot.SetActive(true);
+        myAnimator.SetBool("Camera Toggled", true);
+      }
+      else
+      {
+        gameCamera.Toggle();
+      }
     }
   }
 

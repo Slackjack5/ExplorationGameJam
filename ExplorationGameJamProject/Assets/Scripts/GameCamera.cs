@@ -10,6 +10,7 @@ public class GameCamera : MonoBehaviour
   [SerializeField] private GameObject cameraCanvas;
   [SerializeField] private GameObject invalidPhotoPanel;
   [SerializeField] private GameObject validPhotoPanel;
+  [SerializeField] private GameObject checkmarkCanvas;
   [SerializeField] private Enemy enemy;
   [SerializeField] private LayerMask whatIsEnemy;
   [SerializeField] private LayerMask whatIsMemory;
@@ -20,6 +21,11 @@ public class GameCamera : MonoBehaviour
 
   // Private properties
   private Inventory inventory;
+
+  public bool IsEquipped
+  {
+    get { return cameraCanvas.activeSelf; }
+  }
 
   private bool IsValidPhoto
   {
@@ -32,6 +38,7 @@ public class GameCamera : MonoBehaviour
     inventory = GetComponent<Inventory>();
 
     cameraCanvas.SetActive(false);
+    checkmarkCanvas.SetActive(false);
     errorText.SetActive(false);
     validPhotoPanel.SetActive(false);
     invalidPhotoPanel.SetActive(true);
@@ -70,6 +77,12 @@ public class GameCamera : MonoBehaviour
 
         // Disable the camera UI so that it doesn't appear in screenshot
         cameraCanvas.SetActive(false);
+        Vector3 location = GetLocation(lookRay);
+        if (location != Vector3.zero)
+        {
+          checkmarkCanvas.SetActive(true);
+        }
+
         StartCoroutine(CaptureFrame(lookRay));
       }
       else
@@ -92,7 +105,9 @@ public class GameCamera : MonoBehaviour
     Texture2D texture = ScreenCapture.CaptureScreenshotAsTexture();
     Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     inventory.AddPhoto(sprite, GetLocation(lookRay));
+
     cameraCanvas.SetActive(true);
+    checkmarkCanvas.SetActive(false);
   }
 
   private string FormatCounter()
