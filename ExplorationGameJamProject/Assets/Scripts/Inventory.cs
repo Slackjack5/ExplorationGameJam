@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -127,7 +128,7 @@ public class Inventory : MonoBehaviour
 
     if (collectedLocations.Count > 0 && collectedLocations.SetEquals(requiredLocations))
     {
-      print("You win!");
+      SceneManager.LoadScene("YouWin");
     }
   }
 
