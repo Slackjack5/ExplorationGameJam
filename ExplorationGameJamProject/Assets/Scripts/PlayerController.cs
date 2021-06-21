@@ -132,7 +132,10 @@ public class PlayerController : MonoBehaviour
     {
       int i = Utils.RandomInt(respawnPositions.Count);
       transform.position = respawnPositions[i].position;
+
       inventory.LosePhoto();
+      enemy.GetComponent<Enemy>().Respawn();
+
       hasJustDied = false;
       respawning = true;
     }
@@ -252,8 +255,12 @@ public class PlayerController : MonoBehaviour
   {
     if (IsSeeingInteractable(out RaycastHit hit) && IsGameActive())
     {
-      inventory.IncreaseCapacity();
-      hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      Interactable interactable = hit.transform.gameObject.GetComponent<Interactable>();
+      if (interactable.IsActive)
+      {
+        inventory.IncreaseCapacity();
+        hit.transform.gameObject.GetComponent<Interactable>().Interact();
+      }
     }
   }
 
