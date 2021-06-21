@@ -55,6 +55,8 @@ public class Enemy : MonoBehaviour
 
   public void Respawn()
   {
+    aggro = 1;
+
     int i = Utils.RandomInt(respawnPositions.Count);
     transform.position = respawnPositions[i].position;
   }
