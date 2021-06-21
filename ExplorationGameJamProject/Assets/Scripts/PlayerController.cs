@@ -238,7 +238,6 @@ public class PlayerController : MonoBehaviour
   {
     pauseMenu.SetActive(!pauseMenu.activeSelf);
     Cursor.lockState = pauseMenu.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
-    Cursor.visible = pauseMenu.activeSelf;
     Time.timeScale = pauseMenu.activeSelf ? 0 : 1;
   }
 
