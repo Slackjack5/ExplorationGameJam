@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 
 public class Enemy : MonoBehaviour
 {
-  [SerializeField] private List<Vector3> respawnPositions;
+  [SerializeField] private List<Transform> respawnPositions;
   [SerializeField] private float aggroAcceleration;
   [SerializeField] private float maxSpeed;
   
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
   public void Respawn()
   {
     int i = Utils.RandomInt(respawnPositions.Count);
-    transform.position = respawnPositions[i];
+    transform.position = respawnPositions[i].position;
   }
 
   public void Suppress()
