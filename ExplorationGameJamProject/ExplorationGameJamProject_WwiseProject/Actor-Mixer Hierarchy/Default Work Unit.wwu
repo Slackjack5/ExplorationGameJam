@@ -5,7 +5,6 @@
 			<ChildrenList>
 				<Sound Name="FemaleVocalLoop" ID="{2FDE66F9-B89D-45F8-8830-FB9D64427404}" ShortID="615627056">
 					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -943,9 +942,6 @@
 					</ChildrenList>
 				</Folder>
 				<SwitchContainer Name="GrivanceZones" ID="{614CBAC3-C2A6-4695-8819-9CFC0C07194D}" ShortID="752570448">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
 							<ObjectRef Name="GrievanceZones" ID="{912C17BC-C2B5-45CB-899D-984491B38ABB}" WorkUnitID="{B83D6022-E9AE-4E3D-BC44-4E8BA9BBAE30}"/>
@@ -957,7 +953,7 @@
 							<ObjectRef Name="Zone1" ID="{C4973738-2201-4454-87D1-4608ACF803DC}" WorkUnitID="{94CC9F80-29D2-4A51-85C3-CF6FB361B47F}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+							<ObjectRef Name="Voices" ID="{77A77FDF-E82D-47DA-AF9E-1CFA810DD716}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="GrievingZones" ID="{9B877023-F479-4007-B021-64822A6BD429}" WorkUnitID="{94CC9F80-29D2-4A51-85C3-CF6FB361B47F}"/>
@@ -965,6 +961,9 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Grieving2" ID="{6EA23BFB-893A-4466-85CF-B59EE686601F}" ShortID="183696666">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
@@ -988,6 +987,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Grieving5" ID="{18600A29-78E4-4E6A-9CC7-F451F7CA6D3A}" ShortID="486407873">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
@@ -1011,6 +1013,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Grieving1" ID="{AF23CA58-B246-4626-B7D0-482BE77059C1}" ShortID="213404841">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
@@ -1034,6 +1039,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Grieving3" ID="{9D382353-A566-4750-A1D5-D6D0E5130147}" ShortID="711907515">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
@@ -1057,6 +1065,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Grieving6" ID="{1E3741EF-70D2-4CEC-A517-E63071CA8F9B}" ShortID="744445016">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
@@ -1080,6 +1091,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Grieving4" ID="{217E02E0-99B2-4F17-A5F6-B1629E457D43}" ShortID="645565317">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>

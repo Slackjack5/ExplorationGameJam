@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add4c95e7e309714f9371c1d6ecfbceb, type: 3}
+  m_Name: 848F122C-29A4-4163-A003-95F8BA18884C
+  m_EditorClassIdentifier: 
+  objectName: Play_Grieving5
+  id: 3257725854
+  guid: 848F122C-29A4-4163-A003-95F8BA18884C

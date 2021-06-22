@@ -11,14 +11,14 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="3659710697">
+		<SoundBank Id="77978275" Language="SFX" Hash="3160956247">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3726615666" Name="Fade_AmbienceDown" ObjectPath="\Events\Default Work Unit\Fade_AmbienceDown" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2868361841" Name="Fade_AmbienceUp" ObjectPath="\Events\Default Work Unit\Fade_AmbienceUp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2376328173" Name="Monster" ObjectPath="\Events\Default Work Unit\Monster" MaxAttenuation="20.000000" DurationType="Infinite">
+				<Event Id="2376328173" Name="Monster" ObjectPath="\Events\Default Work Unit\Monster" MaxAttenuation="10.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="461575458" Language="SFX">
 							<ShortName>FemaleVocalLoop.wav</ShortName>
@@ -30,66 +30,81 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="152278570" Name="Play_GrivanceZones" ObjectPath="\Events\Default Work Unit\Play_GrivanceZones" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="36.574150" DurationMax="41.813354">
+				<Event Id="3257725850" Name="Play_Grieving1" ObjectPath="\Events\Default Work Unit\Play_Grieving1" MaxAttenuation="15.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="191303793" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving1.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving1_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3257725849" Name="Play_Grieving2" ObjectPath="\Events\Default Work Unit\Play_Grieving2" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="899522019" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving2.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3257725848" Name="Play_Grieving3" ObjectPath="\Events\Default Work Unit\Play_Grieving3" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="876664076" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving3.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving3_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3257725855" Name="Play_Grieving4" ObjectPath="\Events\Default Work Unit\Play_Grieving4" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="796043547" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving4.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving4_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3257725854" Name="Play_Grieving5" ObjectPath="\Events\Default Work Unit\Play_Grieving5" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="378455918" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving5.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving5_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3257725853" Name="Play_Grieving6" ObjectPath="\Events\Default Work Unit\Play_Grieving6" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="393580908" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving6.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving6_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="152278570" Name="Play_GrivanceZones" ObjectPath="\Events\Default Work Unit\Play_GrivanceZones" MaxAttenuation="15.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="191303793" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving1.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving1_D79FB2B7.wem</Path>
 						</File>
 						<File Id="378455918" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving5.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving5_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving5_D79FB2B7.wem</Path>
 						</File>
 						<File Id="393580908" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving6.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving6_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving6_D79FB2B7.wem</Path>
 						</File>
 						<File Id="796043547" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving4.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving4_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving4_D79FB2B7.wem</Path>
 						</File>
 						<File Id="876664076" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving3.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving3_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving3_D79FB2B7.wem</Path>
 						</File>
 						<File Id="899522019" Language="SFX">
 							<ShortName>FemaleGrieving\Grieving2.wav</ShortName>
-							<Path>SFX\FemaleGrieving\Grieving2_10C4C929.wem</Path>
+							<Path>SFX\FemaleGrieving\Grieving2_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
-					<DefaultSwitchValue>{C4973738-2201-4454-87D1-4608ACF803DC}</DefaultSwitchValue>
-					<SwitchContainers>
-						<SwitchContainer SwitchValue="{5849060D-C3C7-4F9E-8FAE-7BE068D35764}">
-							<Media>
-								<File Id="899522019"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{F122E49B-A124-4581-8038-2B7D07EAF06D}">
-							<Media>
-								<File Id="378455918"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{C4973738-2201-4454-87D1-4608ACF803DC}">
-							<Media>
-								<File Id="191303793"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{C3595D30-4F40-46BC-86E0-42437FF072CC}">
-							<Media>
-								<File Id="876664076"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{864CF74A-2E3C-4D78-B8C8-1CB9A889BF16}">
-							<Media>
-								<File Id="393580908"/>
-							</Media>
-						</SwitchContainer>
-						<SwitchContainer SwitchValue="{43BDFD9E-FE23-4E93-878D-B0CE41D527C9}">
-							<Media>
-								<File Id="796043547"/>
-							</Media>
-						</SwitchContainer>
-					</SwitchContainers>
 				</Event>
 				<Event Id="2822502029" Name="Play_Pad" ObjectPath="\Events\Default Work Unit\Play_Pad" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -146,7 +161,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1671954595">
+		<SoundBank Id="1355168291" Language="SFX" Hash="854877826">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

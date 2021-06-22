@@ -4,18 +4,24 @@
 		<UserProjectSettings Name="" ID="{532042FC-8E1E-40EA-AF81-29B3FB4B6774}">
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="G:\Ableton\Audio\MusicClips\Music\"/>
+				<Property Name="Event Action List\{145EB7F4-3C76-491E-B31C-B587799C6466}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1D9358A3-0C1A-46AE-A98C-21BCFCD6F732}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{26839807-C9D1-449A-89C3-048A7417A4D9}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3B0D2AAD-A156-4A46-86ED-ECB862B05CF5}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{3CFE4A3E-9B51-4BD9-B046-8D030290870C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4563A8D4-988E-4232-B569-00AA4B40AA2F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4C82D0CC-3AE0-4862-A027-A713D9A58C0D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{52F2CD31-5439-4791-8B89-B51C80AD9C87}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5DAC1BB7-69E8-49F0-AA8A-25D00F288385}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{60BCBE99-9EFF-4731-B91A-8729EA710468}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{76BE77FC-18D9-4DE2-950B-81E39191D5B4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{848F122C-29A4-4163-A003-95F8BA18884C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{865E754C-7254-4B94-BA16-FE104277CCA7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9BB80A57-2A2F-4AF5-A8A2-3F71C6DDC5DB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{A8AE8B0B-8D79-4F84-BBE2-7D06D45C9E82}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D569164F-A687-4437-A2A3-8CFA533BA59B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E399F722-8A16-4635-97CC-2B042D1A9DAA}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F730A7B9-578B-433E-B624-5DAB3D552376}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
