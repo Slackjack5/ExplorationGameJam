@@ -352,7 +352,6 @@ MonoBehaviour:
     m_Bits: 64
   memoryArea: Memory Area
   baseSpeed: 6
-  lookSensitivity: 0.2
   maxInteractDistance: 1
   lerp: 0.1
   respawnPositions: []
@@ -491,6 +490,7 @@ MonoBehaviour:
   invalidPhotoPanel: {fileID: 0}
   validPhotoPanel: {fileID: 0}
   checkmarkCanvas: {fileID: 0}
+  helpCanvas: {fileID: 0}
   enemy: {fileID: 0}
   whatIsEnemy:
     serializedVersion: 2
@@ -520,7 +520,12 @@ MonoBehaviour:
   photoShrinkFactor: 0.07
   selectedPhotoShrinkFactor: 0.5
   initialCapacity: 3
-  memoryAreas: []
+  memoryAreas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &648767731585428114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10d48cbc0dcbf74aaba03fecbd42e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpCanvas: {fileID: 0}
   helpText: {fileID: 0}
   interact: Press E to pick up.
   equipCamera: Right click to equip the camera.
