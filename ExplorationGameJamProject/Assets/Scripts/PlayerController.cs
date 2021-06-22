@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
   {
     // Load in bloom and colorAdjustment component
     volume.profile.TryGet<Bloom>(out bloom);
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     cameraPivot.SetActive(false);
     lastPosition = transform.position;
-    }
+  }
 
   // Update is called once per frame
   void Update()
@@ -221,6 +221,7 @@ public class PlayerController : MonoBehaviour
     float targetVelocityX = (baseSpeed - currentCameraSlow) * moveInputX * Time.fixedDeltaTime;
     float targetVelocityZ = (baseSpeed - currentCameraSlow) * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
+    targetVelocity.y = 0;
 
     if (!IsGameActive())
     {
@@ -228,19 +229,20 @@ public class PlayerController : MonoBehaviour
     }
 
     currentVelocity = Vector3.Lerp(currentVelocity, targetVelocity, lerp);
+    currentVelocity.y = 0;
     characterController.Move(currentVelocity);
 
     //Footstep audio
     distanceTravelled = Vector3.Distance(transform.position, lastPosition);
     lastPosition = transform.position;
-        Debug.Log(distanceTravelled);
+    Debug.Log(distanceTravelled);
     if (characterController.velocity.magnitude >= .1f && playingFootstep == false)
     {
-       if(distanceTravelled>=.04)
-            {
-                AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
-            }
-      
+      if (distanceTravelled >= .04)
+      {
+        AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
+      }
+
       StartCoroutine(NextFootstep());
       playingFootstep = true;
     }
