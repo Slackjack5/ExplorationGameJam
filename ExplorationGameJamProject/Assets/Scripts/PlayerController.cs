@@ -416,8 +416,11 @@ public class PlayerController : MonoBehaviour
 
   private void Respawn()
   {
-    deathTime = Time.time;
-    hasJustDied = true;
+    if (hasJustDied == false)
+    {
+      deathTime = Time.time;
+      hasJustDied = true;
+    }
   }
 
   private void ShowHelpText()
