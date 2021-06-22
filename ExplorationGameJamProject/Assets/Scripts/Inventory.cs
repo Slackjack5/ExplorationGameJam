@@ -122,6 +122,7 @@ public class Inventory : MonoBehaviour
     {
       if (photoHasBeenSelected)
       {
+        print(selectedPhotoPos);
         Shader.SetGlobalVector("_PhotoPoint", selectedPhotoPos);
         Shader.SetGlobalFloat("_PhotoPointTime", Time.time);
       }
