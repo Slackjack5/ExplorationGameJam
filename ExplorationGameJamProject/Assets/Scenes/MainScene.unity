@@ -14975,7 +14975,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPositions: []
-  aggro: 1
+  aggroAcceleration: 0
+  maxSpeed: 0
   followObject: {fileID: 300453321}
   enemyMaterial: {fileID: 0}
 --- !u!108 &1121401856
@@ -16870,7 +16871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23892e82956a1ca42ba5d30203b981b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.437721
+      value: 24.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23892e82956a1ca42ba5d30203b981b1, type: 3}
       propertyPath: m_LocalPosition.y
