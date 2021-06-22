@@ -81,7 +81,10 @@ public class Inventory : MonoBehaviour
     HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
     foreach (Photo photo in photos)
     {
-      collectedLocations.Add(photo.location);
+      if (photo.location != Vector3.zero)
+      {
+        collectedLocations.Add(photo.location);
+      }
     }
 
     return collectedLocations.Count;
@@ -134,7 +137,10 @@ public class Inventory : MonoBehaviour
     HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
     foreach (Photo photo in photos)
     {
-      collectedLocations.Add(photo.location);
+      if (photo.location != Vector3.zero)
+      {
+        collectedLocations.Add(photo.location);
+      }
     }
 
     if (collectedLocations.Count > 0 && collectedLocations.SetEquals(requiredLocations))

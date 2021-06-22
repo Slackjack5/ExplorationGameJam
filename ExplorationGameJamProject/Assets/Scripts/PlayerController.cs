@@ -293,7 +293,7 @@ public class PlayerController : MonoBehaviour
         helpTextManager.RemoveText();
       }
 
-      if (gameCamera.IsSeeingEnemy && !helpTextManager.IsCaptureEnemyComplete)
+      if (gameCamera.IsEquipped && gameCamera.IsSeeingEnemy && !helpTextManager.IsCaptureEnemyComplete)
       {
         helpTextManager.IsCaptureEnemyComplete = true;
         helpTextManager.RemoveText();
