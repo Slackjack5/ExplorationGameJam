@@ -5,7 +5,6 @@ using TMPro;
 
 public class HelpTextManager : MonoBehaviour
 {
-  [SerializeField] private GameObject helpCanvas;
   [SerializeField] private TextMeshProUGUI helpText;
   [SerializeField] private string interact = "Press E to pick up.";
   [SerializeField] private string equipCamera = "Right click to equip the camera.";
