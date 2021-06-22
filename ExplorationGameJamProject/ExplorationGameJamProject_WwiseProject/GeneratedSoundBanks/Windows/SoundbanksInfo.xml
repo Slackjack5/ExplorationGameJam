@@ -11,11 +11,13 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="1419597956">
+		<SoundBank Id="77978275" Language="SFX" Hash="3659710697">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3726615666" Name="Fade_AmbienceDown" ObjectPath="\Events\Default Work Unit\Fade_AmbienceDown" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2868361841" Name="Fade_AmbienceUp" ObjectPath="\Events\Default Work Unit\Fade_AmbienceUp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2376328173" Name="Monster" ObjectPath="\Events\Default Work Unit\Monster" MaxAttenuation="20.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="461575458" Language="SFX">
@@ -28,17 +30,134 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="152278570" Name="Play_GrivanceZones" ObjectPath="\Events\Default Work Unit\Play_GrivanceZones" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="36.574150" DurationMax="41.813354">
+					<IncludedMemoryFiles>
+						<File Id="191303793" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving1.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving1_10C4C929.wem</Path>
+						</File>
+						<File Id="378455918" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving5.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving5_10C4C929.wem</Path>
+						</File>
+						<File Id="393580908" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving6.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving6_10C4C929.wem</Path>
+						</File>
+						<File Id="796043547" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving4.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving4_10C4C929.wem</Path>
+						</File>
+						<File Id="876664076" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving3.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving3_10C4C929.wem</Path>
+						</File>
+						<File Id="899522019" Language="SFX">
+							<ShortName>FemaleGrieving\Grieving2.wav</ShortName>
+							<Path>SFX\FemaleGrieving\Grieving2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{C4973738-2201-4454-87D1-4608ACF803DC}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{5849060D-C3C7-4F9E-8FAE-7BE068D35764}">
+							<Media>
+								<File Id="899522019"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{F122E49B-A124-4581-8038-2B7D07EAF06D}">
+							<Media>
+								<File Id="378455918"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{C4973738-2201-4454-87D1-4608ACF803DC}">
+							<Media>
+								<File Id="191303793"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{C3595D30-4F40-46BC-86E0-42437FF072CC}">
+							<Media>
+								<File Id="876664076"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{864CF74A-2E3C-4D78-B8C8-1CB9A889BF16}">
+							<Media>
+								<File Id="393580908"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{43BDFD9E-FE23-4E93-878D-B0CE41D527C9}">
+							<Media>
+								<File Id="796043547"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2822502029" Name="Play_Pad" ObjectPath="\Events\Default Work Unit\Play_Pad" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="61567263" Language="SFX">
+							<ShortName>AmbientPad.wav</ShortName>
+							<Path>SFX\AmbientPad_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3382723624" Name="Play_RandomMusic" ObjectPath="\Events\Default Work Unit\Play_RandomMusic" DurationType="OneShot" DurationMin="33.000000" DurationMax="68.936188">
+					<IncludedMemoryFiles>
+						<File Id="252929353" Language="SFX">
+							<ShortName>PianoMelody1.wav</ShortName>
+							<Path>SFX\PianoMelody1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="583963047" Language="SFX">
+							<ShortName>PianoMelody3.wav</ShortName>
+							<Path>SFX\PianoMelody3_D79FB2B7.wem</Path>
+						</File>
+						<File Id="900572521" Language="SFX">
+							<ShortName>PianoMelody2.wav</ShortName>
+							<Path>SFX\PianoMelody2_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1750065161" Name="Play_Spooky" ObjectPath="\Events\Default Work Unit\Play_Spooky" DurationType="OneShot" DurationMin="13.216825" DurationMax="24.648912">
+					<IncludedMemoryFiles>
+						<File Id="648754630" Language="SFX">
+							<ShortName>SpookyAmbience2.wav</ShortName>
+							<Path>SFX\SpookyAmbience2_10C4C929.wem</Path>
+						</File>
+						<File Id="761609339" Language="SFX">
+							<ShortName>SpookyAmbience3.wav</ShortName>
+							<Path>SFX\SpookyAmbience3_10C4C929.wem</Path>
+						</File>
+						<File Id="848869919" Language="SFX">
+							<ShortName>SpookyAmbience1.wav</ShortName>
+							<Path>SFX\SpookyAmbience1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3444384738" Name="Stop_Playlist" ObjectPath="\Events\Default Work Unit\Stop_Playlist" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="109497315" Name="GrievingZones" ObjectPath="\Switches\Default Work Unit\GrievingZones">
+					<Switches>
+						<Switch Id="831766780" Name="Zone1" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone1"/>
+						<Switch Id="831766783" Name="Zone2" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone2"/>
+						<Switch Id="831766782" Name="Zone3" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone3"/>
+						<Switch Id="831766777" Name="Zone4" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone4"/>
+						<Switch Id="831766776" Name="Zone5" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone5"/>
+						<Switch Id="831766779" Name="Zone6" ObjectPath="\Switches\Default Work Unit\GrievingZones\Zone6"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3265890646">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1671954595">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
 				<AuxBus Id="348963605" Name="Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverb"/>
 			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="954015593" Name="Audio_Ducking" ObjectPath="\Game Parameters\Default Work Unit\Audio_Ducking"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2385628198" Language="SFX" Hash="174109881">
+		<SoundBank Id="2385628198" Language="SFX" Hash="2661456178">
 			<ObjectPath>\SoundBanks\Default Work Unit\Footsteps</ObjectPath>
 			<ShortName>Footsteps</ShortName>
 			<Path>Footsteps.bnk</Path>

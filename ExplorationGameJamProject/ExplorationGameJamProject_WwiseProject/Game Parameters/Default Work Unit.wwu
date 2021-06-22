@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}" SchemaVersion="103">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Audio_Ducking" ID="{17EC14BD-66A8-4213-8450-672975F74813}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
