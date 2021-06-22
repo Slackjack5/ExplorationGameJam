@@ -18,6 +18,61 @@
 							</ReferenceList>
 							<ObjectLists/>
 						</AuxBus>
+						<Bus Name="Environment" ID="{B4DFFD92-F368-4A4C-BF48-34420B1A9DAF}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+									<ObjectRef Name="Sidechain_Meter" ID="{9F8C6994-1433-45FA-8388-2082B4EAC6A5}" WorkUnitID="{A4679384-75A0-4F44-90ED-6CAB4193B6CD}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Music" ID="{D4793707-44CC-44E4-8355-E02EE127285C}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+									<ObjectRef Name="Sidechain_Meter" ID="{9F8C6994-1433-45FA-8388-2082B4EAC6A5}" WorkUnitID="{A4679384-75A0-4F44-90ED-6CAB4193B6CD}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Ambience" ID="{0E67B01A-7545-40A4-9524-333E7FCC2F4F}">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{0C5BF6B7-CA14-4622-9344-CDCBA918FB06}" ShortID="182067268">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Audio_Ducking" ID="{17EC14BD-66A8-4213-8450-672975F74813}" WorkUnitID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{EEDA9FE9-AD7A-433C-8719-53449109A93B}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-48</XPos>
+														<YPos>-0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>-45.08224</XPos>
+														<YPos>0.03399</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-12.55531</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
 					</ChildrenList>
 					<ObjectLists/>
 				</Bus>

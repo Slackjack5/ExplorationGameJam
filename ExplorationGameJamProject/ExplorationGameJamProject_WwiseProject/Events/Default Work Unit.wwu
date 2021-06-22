@@ -32,6 +32,134 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_RandomMusic" ID="{60BCBE99-9EFF-4731-B91A-8729EA710468}">
+					<ChildrenList>
+						<Action Name="" ID="{092C1154-3089-424A-AC68-3E538B380235}" ShortID="384755548">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Playlist" ID="{7B5AB62F-B4F4-45B4-A661-65631EFBD752}" WorkUnitID="{9AAB0F12-4EF5-4FFB-847A-351DCF22F17F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_GrivanceZones" ID="{5DAC1BB7-69E8-49F0-AA8A-25D00F288385}">
+					<ChildrenList>
+						<Action Name="" ID="{43B8E2A2-600D-46F8-9C1B-0326EF0EFC10}" ShortID="860531944">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GrivanceZones" ID="{614CBAC3-C2A6-4695-8819-9CFC0C07194D}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Spooky" ID="{4563A8D4-988E-4232-B569-00AA4B40AA2F}">
+					<ChildrenList>
+						<Action Name="" ID="{BFDD8772-7429-47BF-8164-1A590FA0E515}" ShortID="284246379">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SpookyAmbience" ID="{77C44FEC-7129-42B4-9609-A09332F72773}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Pad" ID="{9BB80A57-2A2F-4AF5-A8A2-3F71C6DDC5DB}">
+					<ChildrenList>
+						<Action Name="" ID="{297705B7-6B5E-4C6B-A0FC-2FDA77648ED9}" ShortID="849680650">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbientPad" ID="{C6F207D5-0364-4FB1-8853-2DDE64F0C678}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_Voice_Volume_Ambience" ID="{A8AE8B0B-8D79-4F84-BBE2-7D06D45C9E82}">
+					<ChildrenList>
+						<Action Name="" ID="{18790849-5F60-4E91-B916-96F62108F952}" ShortID="353514656">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="12"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience" ID="{0E67B01A-7545-40A4-9524-333E7FCC2F4F}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_AmbientPad" ID="{1D9358A3-0C1A-46AE-A98C-21BCFCD6F732}">
+					<ChildrenList>
+						<Action Name="" ID="{2A5C3E49-978F-467D-B535-FF47A975B2DC}" ShortID="378092298">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AmbientPad" ID="{C6F207D5-0364-4FB1-8853-2DDE64F0C678}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Fade_AmbienceDown" ID="{3CFE4A3E-9B51-4BD9-B046-8D030290870C}">
+					<ChildrenList>
+						<Action Name="" ID="{3407743F-1EB2-432D-9D87-47E95DC0AFCE}" ShortID="522471988">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeInCurve" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+								<Property Name="Volume" Type="Real64" Value="-96"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience" ID="{0E67B01A-7545-40A4-9524-333E7FCC2F4F}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Fade_AmbienceUp" ID="{26839807-C9D1-449A-89C3-048A7417A4D9}">
+					<ChildrenList>
+						<Action Name="" ID="{B6F9F5D6-2461-4AA8-AADC-245B31F7FA1C}" ShortID="63778500">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="11"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience" ID="{0E67B01A-7545-40A4-9524-333E7FCC2F4F}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Playlist" ID="{D569164F-A687-4437-A2A3-8CFA533BA59B}">
+					<ChildrenList>
+						<Action Name="" ID="{DCFEF4B3-88B0-484A-906A-C9924A93EB3E}" ShortID="565917029">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music Playlist" ID="{7B5AB62F-B4F4-45B4-A661-65631EFBD752}" WorkUnitID="{9AAB0F12-4EF5-4FFB-847A-351DCF22F17F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

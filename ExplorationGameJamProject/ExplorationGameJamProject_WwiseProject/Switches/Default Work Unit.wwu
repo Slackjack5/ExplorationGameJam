@@ -11,6 +11,16 @@
 						<Switch Name="Tiles" ID="{2D5E80AB-42C8-4FC1-82D0-5BC4F57FB9BE}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="GrievingZones" ID="{9B877023-F479-4007-B021-64822A6BD429}">
+					<ChildrenList>
+						<Switch Name="Zone1" ID="{C4973738-2201-4454-87D1-4608ACF803DC}"/>
+						<Switch Name="Zone2" ID="{5849060D-C3C7-4F9E-8FAE-7BE068D35764}"/>
+						<Switch Name="Zone3" ID="{C3595D30-4F40-46BC-86E0-42437FF072CC}"/>
+						<Switch Name="Zone4" ID="{43BDFD9E-FE23-4E93-878D-B0CE41D527C9}"/>
+						<Switch Name="Zone5" ID="{F122E49B-A124-4581-8038-2B7D07EAF06D}"/>
+						<Switch Name="Zone6" ID="{864CF74A-2E3C-4D78-B8C8-1CB9A889BF16}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
