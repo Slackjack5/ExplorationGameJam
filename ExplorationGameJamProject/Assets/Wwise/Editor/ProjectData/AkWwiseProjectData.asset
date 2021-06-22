@@ -243,7 +243,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 22f799e3168a354697cc2b042d1a9daa
       Path: Events\Default Work Unit\Monster
-      maxAttenuation: 10
+      maxAttenuation: 8
       maxDuration: -1
       minDuration: -1
     - name: Play_Camera
