@@ -8,13 +8,13 @@ public class AudioEvents : MonoBehaviour
     private bool ambienceSilenced = false;
     private int randomizer = 0;
     private float waitTimer = 65;
-    private float cooldownTimer = 60;
+    private float cooldownTimer = 30;
     private void FixedUpdate()
     {
         //AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
         if (eventStarted==false)
         {
-            randomizer = Random.Range(0, 10);
+            randomizer = Random.Range(1, 11);
             StartCoroutine(RandomEvent());
             eventStarted = true;
         }
@@ -31,11 +31,11 @@ public class AudioEvents : MonoBehaviour
             AkSoundEngine.PostEvent("Fade_AmbienceDown", this.gameObject);
             ambienceSilenced = true;
         }
-        else if (randomizer > 3 && randomizer <= 6)
+        else if (randomizer > 3 && randomizer <= 5)
         {
             AkSoundEngine.PostEvent("Play_Spooky", this.gameObject);
         }
-        else if (randomizer > 6 && randomizer <= 8)
+        else if (randomizer > 5 && randomizer <= 7)
         {
             if(ambienceSilenced == true)
             {
@@ -43,7 +43,7 @@ public class AudioEvents : MonoBehaviour
             }
             
         }
-        else if (randomizer > 8 && randomizer <= 10)
+        else if (randomizer > 7 && randomizer <= 10)
         {
             AkSoundEngine.PostEvent("Play_RandomMusic", this.gameObject);
             AkSoundEngine.PostEvent("Fade_AmbienceDown", this.gameObject);
