@@ -16,7 +16,14 @@ public class MenuScript : MonoBehaviour
       Shader.SetGlobalFloat("_Point2Time", -10000);
       Shader.SetGlobalVector("_Point3", offmap);
       Shader.SetGlobalFloat("_Point3Time", -10000);
+      Shader.SetGlobalVector("_PhotoPoint", offmap);
+      Shader.SetGlobalFloat("_PhotoPointTime", -10000);
     }
     SceneManager.LoadScene(scene);
+  }
+
+  public void Exit()
+  {
+    Application.Quit();
   }
 }
