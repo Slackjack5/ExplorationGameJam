@@ -552,6 +552,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 983207447}
     - target: {fileID: 4449780693534710812, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 57fd69c32f8d2ac4993b1607705d68e8, type: 2}
+    - target: {fileID: 4449780693534710812, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 828400409}
@@ -561,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 637111cd2c729f54092e9246f021a6de, type: 2}
     - target: {fileID: 8668301873496669954, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
       propertyPath: LargeModePositions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8878326280191244289, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
       propertyPath: sidebar
@@ -1539,8 +1543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa356eaa68cf6747a127e51c412fac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnPositions: []
+  aggroAcceleration: 0
+  maxSpeed: 0
   followObject: {fileID: 300453321}
-  speed: 0.4
+  enemyMaterial: {fileID: 0}
 --- !u!108 &1121401856
 Light:
   m_ObjectHideFlags: 0

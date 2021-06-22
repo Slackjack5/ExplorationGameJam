@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private LayerMask whatIsInteractable;
   [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
-  [SerializeField] private float lookSensitivity = 0.2f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
   [SerializeField] private List<Transform> respawnPositions;
@@ -35,6 +34,7 @@ public class PlayerController : MonoBehaviour
   private bool hasJustDied;
   private bool respawning;
   private ColorAdjustments colorAdjustments;
+  private InputAction action;
 
   // Components
   private CharacterController characterController;
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
 
     nextPoint = 0;
     shaderTimer = Time.time + shaderDelay;
-
     Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
 
@@ -163,10 +162,10 @@ public class PlayerController : MonoBehaviour
     // Look
     if (IsGameActive())
     {
-      float targetHorizontalLook = lookSensitivity * lookInputX;
+      float targetHorizontalLook = Settings.sensitivity * lookInputX;
       transform.Rotate(Vector3.up * targetHorizontalLook);
 
-      float targetVerticalLook = lookSensitivity * lookInputY;
+      float targetVerticalLook = Settings.sensitivity * lookInputY;
       cameraRotationX -= targetVerticalLook;
       cameraRotationX = Mathf.Clamp(cameraRotationX, -90f, 90f);
       playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
