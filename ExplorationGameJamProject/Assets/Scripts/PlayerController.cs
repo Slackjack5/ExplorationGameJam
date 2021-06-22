@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private LayerMask whatIsInteractable;
   [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
+  [SerializeField] private float cameraSlow = 3f;
   [SerializeField] private float maxInteractDistance = 1f;
   [SerializeField] private float lerp = 0.1f;
   [SerializeField] private List<Transform> respawnPositions;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
   private ColorAdjustments colorAdjustments;
   private InputAction action;
   private bool isCameraPickedUp;
+  private float currentCameraSlow;
 
   // Components
   private CharacterController characterController;
@@ -207,8 +209,17 @@ public class PlayerController : MonoBehaviour
   private void FixedUpdate()
   {
     // Move
-    float targetVelocityX = baseSpeed * moveInputX * Time.fixedDeltaTime;
-    float targetVelocityZ = baseSpeed * moveInputZ * Time.fixedDeltaTime;
+    if (gameCamera.IsEquipped)
+    {
+      currentCameraSlow = cameraSlow;
+    }
+    else
+    {
+      currentCameraSlow = 0f;
+    }
+
+    float targetVelocityX = (baseSpeed - currentCameraSlow) * moveInputX * Time.fixedDeltaTime;
+    float targetVelocityZ = (baseSpeed - currentCameraSlow) * moveInputZ * Time.fixedDeltaTime;
     Vector3 targetVelocity = transform.right * targetVelocityX + transform.forward * targetVelocityZ;
 
     if (!IsGameActive())
@@ -286,6 +297,12 @@ public class PlayerController : MonoBehaviour
         helpTextManager.RemoveText();
       }
 
+      if (IsGameActive() && gameCamera.IsValidPhoto)
+      {
+        // Play sound when taking a photo
+        AkSoundEngine.PostEvent("Play_Camera", gameObject);
+      }
+
       gameCamera.TakePhoto();
     }
   }
@@ -348,6 +365,9 @@ public class PlayerController : MonoBehaviour
         helpTextManager.IsEquipCameraComplete = true;
         helpTextManager.RemoveText();
       }
+
+      // Play camera equip sound
+      AkSoundEngine.PostEvent("Play_Equip", gameObject);
 
       if (!gameCamera.IsEquipped)
       {

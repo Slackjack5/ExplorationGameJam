@@ -352,6 +352,7 @@ MonoBehaviour:
     m_Bits: 64
   memoryArea: Memory Area
   baseSpeed: 6
+  cameraSlow: 3
   maxInteractDistance: 1
   lerp: 0.1
   respawnPositions: []
