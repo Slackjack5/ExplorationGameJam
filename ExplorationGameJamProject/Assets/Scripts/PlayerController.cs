@@ -124,9 +124,9 @@ public class PlayerController : MonoBehaviour
     Vector2 playerXZ = new Vector2(transform.position.x, transform.position.z);
     Vector2 enemyXZ = new Vector2(enemy.transform.position.x, enemy.transform.position.z);
     float enemyDistance = Mathf.Abs(Vector2.Distance(playerXZ, enemyXZ));
-    if (enemyDistance < 5)
+    if (enemyDistance < 8)
     {
-      bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 5f) * 5f);
+      bloom.intensity.value = Mathf.Max(0.1f, (1 - enemyDistance / 8f) * 5f);
     }
     else
     {
