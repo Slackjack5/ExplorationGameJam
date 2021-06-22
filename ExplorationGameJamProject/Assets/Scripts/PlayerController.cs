@@ -293,7 +293,7 @@ public class PlayerController : MonoBehaviour
         helpTextManager.RemoveText();
       }
 
-      if (gameCamera.IsSeeingEnemy && !helpTextManager.IsCaptureEnemyComplete)
+      if (gameCamera.IsEquipped && gameCamera.IsSeeingEnemy && !helpTextManager.IsCaptureEnemyComplete)
       {
         helpTextManager.IsCaptureEnemyComplete = true;
         helpTextManager.RemoveText();
@@ -440,6 +440,10 @@ public class PlayerController : MonoBehaviour
     else if (!helpTextManager.IsOpenInventoryComplete && helpTextManager.IsTakePhotoComplete)
     {
       helpTextManager.ShowOpenInventoryText();
+    }
+    else if (!helpTextManager.IsSelectPhotoComplete && helpTextManager.IsOpenInventoryComplete)
+    {
+      helpTextManager.ShowSelectPhotoText();
     }
     else if (!helpTextManager.IsCaptureEnemyComplete && gameCamera.IsSeeingEnemy && helpTextManager.IsOpenInventoryComplete)
     {

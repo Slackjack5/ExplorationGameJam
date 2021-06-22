@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour
   [SerializeField] private float photoShrinkFactor = 0.07f;
   [SerializeField] private float selectedPhotoShrinkFactor = 0.5f;
   [SerializeField] private int initialCapacity = 3;
-  [SerializeField] private List<Transform> memoryAreas;
+  [SerializeField] private List<Transform> memories;
 
   // Private properties
   private List<Photo> photos;
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
 
     // Initialize the set of required locations to win
     requiredLocations = new HashSet<Vector3>();
-    foreach (Transform transform in memoryAreas)
+    foreach (Transform transform in memories)
     {
       requiredLocations.Add(transform.position);
     }
@@ -81,7 +81,10 @@ public class Inventory : MonoBehaviour
     HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
     foreach (Photo photo in photos)
     {
-      collectedLocations.Add(photo.location);
+      if (photo.location != Vector3.zero)
+      {
+        collectedLocations.Add(photo.location);
+      }
     }
 
     return collectedLocations.Count;
@@ -134,7 +137,10 @@ public class Inventory : MonoBehaviour
     HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
     foreach (Photo photo in photos)
     {
-      collectedLocations.Add(photo.location);
+      if (photo.location != Vector3.zero)
+      {
+        collectedLocations.Add(photo.location);
+      }
     }
 
     if (collectedLocations.Count > 0 && collectedLocations.SetEquals(requiredLocations))
