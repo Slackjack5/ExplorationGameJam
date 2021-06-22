@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
   private float respawnTime;
   private bool hasJustDied;
   private bool respawning;
+  private float initialFadeTime;
   private ColorAdjustments colorAdjustments;
   private InputAction action;
 
@@ -69,7 +70,9 @@ public class PlayerController : MonoBehaviour
     gameCamera = GetComponent<GameCamera>();
     inventory = GetComponent<Inventory>();
 
+
     nextPoint = 0;
+    initialFadeTime = Time.time;
     shaderTimer = Time.time + shaderDelay;
     Time.timeScale = 1;
     Cursor.lockState = CursorLockMode.Locked;
@@ -157,6 +160,14 @@ public class PlayerController : MonoBehaviour
     {
       colorAdjustments.contrast.value = 0;
       colorAdjustments.colorFilter.value = new Color(1, 1, 1, 1);
+    }
+
+    if (Time.time - initialFadeTime < 2)
+    {
+      Color blackFade = new Color((Time.time - initialFadeTime) / 2, (Time.time - initialFadeTime) / 2, (Time.time - initialFadeTime) / 2, 1);
+      float contrast = (1 - (Time.time - initialFadeTime) / 2) * -100;
+      colorAdjustments.contrast.value = contrast;
+      colorAdjustments.colorFilter.value = blackFade;
     }
 
     // Look

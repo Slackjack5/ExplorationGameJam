@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e5c05e57856f7647bb011ee973d07dc2
     GuidInternal: 
-    m_lastTime: -8585773072678527461
+    m_lastTime: -8585772840171986591
     List:
     - name: Ambience
       guid: 1ab0670e4575a4409524333e7fcc2f4f
@@ -134,7 +134,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 5b4c479a189c9143b5eedfae43b72f2e
     GuidInternal: 
-    m_lastTime: -8585773072677948982
+    m_lastTime: -8585772840168263231
     List:
     - name: Ambient
       guid: a1f84d864d7b1646b91725cba03ae02b
@@ -176,8 +176,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 8b36f0e61bb82e4abaa6234a6c2b4941
     GuidInternal: 
-    m_lastTime: -8585773072678128404
+    m_lastTime: -8585772840180108041
     List:
+    - name: Fade_AmbienceDown
+      guid: 3e4afe3c519bd94bb0468d030290870c
+      id: 3726615666
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Fade_AmbienceDown
+        ObjectType: 3
+        guid: 3e4afe3c519bd94bb0468d030290870c
+      Path: Events\Default Work Unit\Fade_AmbienceDown
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Fade_AmbienceUp
+      guid: 07988326d1c99a4489c3048a7417a4d9
+      id: 2868361841
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Fade_AmbienceUp
+        ObjectType: 3
+        guid: 07988326d1c99a4489c3048a7417a4d9
+      Path: Events\Default Work Unit\Fade_AmbienceUp
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Monster
       guid: 22f799e3168a354697cc2b042d1a9daa
       id: 2376328173
@@ -297,6 +331,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_AmbientPad
+      guid: a358931d1a0cae46a98c21bcfcd6f732
+      id: 2313317663
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Stop_AmbientPad
+        ObjectType: 3
+        guid: a358931d1a0cae46a98c21bcfcd6f732
+      Path: Events\Default Work Unit\Stop_AmbientPad
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Playlist
+      guid: 4f1669d587a63744a2a38cfa533ba59b
+      id: 3444384738
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b36f0e61bb82e4abaa6234a6c2b4941
+      - ElementName: Stop_Playlist
+        ObjectType: 3
+        guid: 4f1669d587a63744a2a38cfa533ba59b
+      Path: Events\Default Work Unit\Stop_Playlist
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -309,7 +377,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 3598e0c42dfa894d84ae3f0e01b1cdbb
     GuidInternal: 
-    m_lastTime: -8585773094120112109
+    m_lastTime: -8585772840176225016
     List:
     - name: Audio_Ducking
       guid: bd14ec17a86613428450672975f74813
@@ -351,7 +419,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 809fcc94d229514a85c3cf6fb361b47f
     GuidInternal: 
-    m_lastTime: -8585773080861190583
+    m_lastTime: -8585772840168253247
     List:
     - name: Footsteps
       guid: 32659597acf01d49b49ec0410162682d
