@@ -76,6 +76,17 @@ public class Inventory : MonoBehaviour
     CheckWinCondition();
   }
 
+  public int GetUniqueCount()
+  {
+    HashSet<Vector3> collectedLocations = new HashSet<Vector3>();
+    foreach (Photo photo in photos)
+    {
+      collectedLocations.Add(photo.location);
+    }
+
+    return collectedLocations.Count;
+  }
+
   public void IncreaseCapacity()
   {
     CurrentCapacity++;

@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 8878326280191244289, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
       propertyPath: memoryAreas.Array.data[0]
       value: 
-      objectReference: {fileID: 8357422273944844537}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
 --- !u!1 &300453321 stripped
@@ -675,6 +675,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8f8858c55846eb4d8cc9a83f894f29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &300453324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8878326280191244289, guid: 2bc256abe13593a4ebcc1b205ab1ba72, type: 3}
+  m_PrefabInstance: {fileID: 300453320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300453321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d747d6e17e5b484fbcb0419c498b1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &333848875
@@ -1498,7 +1509,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.05
+  m_fontSize: 26.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2033,12 +2044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa356eaa68cf6747a127e51c412fac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 300453324}
   respawnPositions:
   - {fileID: 1878644663}
-  aggroAcceleration: 0.1
-  maxSpeed: 4
+  aggroAcceleration: 0.5
   followObject: {fileID: 300453321}
   enemyMaterial: {fileID: 2100000, guid: c47088b15c98ae54f960908639b6b4c3, type: 2}
+  aggro: 1
 --- !u!108 &1121401856
 Light:
   m_ObjectHideFlags: 0
@@ -2603,7 +2615,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.55
+  m_fontSize: 20.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4573,8 +4585,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af41649f15f3db84c81b77d7e3ebb539, type: 3}
---- !u!4 &8357422273944844537 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8357422272937377422, guid: af41649f15f3db84c81b77d7e3ebb539, type: 3}
-  m_PrefabInstance: {fileID: 8357422273944844536}
-  m_PrefabAsset: {fileID: 0}
