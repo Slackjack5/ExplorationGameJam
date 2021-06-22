@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Grieving5" ID="{848F122C-29A4-4163-A003-95F8BA18884C}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Spooky" ID="{4563A8D4-988E-4232-B569-00AA4B40AA2F}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot" ID="{6AAA8E9D-0A39-429A-846A-E469C241CF16}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Grieving1" ID="{F730A7B9-578B-433E-B624-5DAB3D552376}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Playlist" ID="{D569164F-A687-4437-A2A3-8CFA533BA59B}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fade_AmbienceUp" ID="{26839807-C9D1-449A-89C3-048A7417A4D9}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
@@ -14,10 +15,13 @@
 						<ObjectRef Name="Play_RandomMusic" ID="{60BCBE99-9EFF-4731-B91A-8729EA710468}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Grieving6" ID="{52F2CD31-5439-4791-8B89-B51C80AD9C87}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Grieving2" ID="{145EB7F4-3C76-491E-B31C-B587799C6466}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Equip" ID="{13D21B42-F6B5-49CB-B31E-C0CCE59D2712}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_GrivanceZones" ID="{5DAC1BB7-69E8-49F0-AA8A-25D00F288385}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Grieving3" ID="{3B0D2AAD-A156-4A46-86ED-ECB862B05CF5}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Camera" ID="{0E400817-A155-4AA9-B9C2-3C99CED91FA3}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Pad" ID="{9BB80A57-2A2F-4AF5-A8A2-3F71C6DDC5DB}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Fade_AmbienceDown" ID="{3CFE4A3E-9B51-4BD9-B046-8D030290870C}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BRS_Camera_D50_ShutterClick4" ID="{48616406-3FF0-4C30-AFD7-3C94BD9AC4CE}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Grieving4" ID="{76BE77FC-18D9-4DE2-950B-81E39191D5B4}" WorkUnitID="{E6F0368B-B81B-4A2E-BAA6-234A6C2B4941}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

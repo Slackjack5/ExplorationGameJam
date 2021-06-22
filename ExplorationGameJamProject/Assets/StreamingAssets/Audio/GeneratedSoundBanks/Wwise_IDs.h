@@ -16,6 +16,8 @@ namespace AK
         static const AkUniqueID FADE_AMBIENCEDOWN = 3726615666U;
         static const AkUniqueID FADE_AMBIENCEUP = 2868361841U;
         static const AkUniqueID MONSTER = 2376328173U;
+        static const AkUniqueID PLAY_CAMERA = 1928751031U;
+        static const AkUniqueID PLAY_EQUIP = 1607971162U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_GRIEVING1 = 3257725850U;
         static const AkUniqueID PLAY_GRIEVING2 = 3257725849U;

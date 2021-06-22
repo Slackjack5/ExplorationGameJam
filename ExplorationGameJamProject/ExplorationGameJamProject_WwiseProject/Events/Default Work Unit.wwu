@@ -226,6 +226,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Camera" ID="{0E400817-A155-4AA9-B9C2-3C99CED91FA3}">
+					<ChildrenList>
+						<Action Name="" ID="{35EBA79A-72BB-43CE-AAC4-34283B2090DE}" ShortID="331193080">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BRS_Camera_D50_ShutterClick4" ID="{48616406-3FF0-4C30-AFD7-3C94BD9AC4CE}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Equip" ID="{13D21B42-F6B5-49CB-B31E-C0CCE59D2712}">
+					<ChildrenList>
+						<Action Name="" ID="{13ECA157-7149-471A-A2FE-E5EF50BAD9C5}" ShortID="512930789">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot" ID="{6AAA8E9D-0A39-429A-846A-E469C241CF16}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

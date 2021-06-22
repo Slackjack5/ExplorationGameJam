@@ -1179,6 +1179,99 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<Sound Name="ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot" ID="{6AAA8E9D-0A39-429A-846A-E469C241CF16}" ShortID="359862576">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{4A11A2B0-1E7C-4AF0-A9CA-E4159FE8ABB9}">
+										<PropertyList>
+											<Property Name="Max" Type="Real64" Value="100"/>
+											<Property Name="Min" Type="Real64" Value="-100"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{848BA6F5-FD70-4667-B628-E68FD409B11E}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot" ID="{A53C1A61-C020-4CBB-A76A-776F314F4B11}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.2663881748072"/>
+								<Property Name="LoopEnd" Type="Real64" Value="0.807519280205656"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="800780477"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot" ID="{A53C1A61-C020-4CBB-A76A-776F314F4B11}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BRS_Camera_D50_ShutterClick4" ID="{48616406-3FF0-4C30-AFD7-3C94BD9AC4CE}" ShortID="489155474">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{CC33B215-5CB2-4041-93A1-A65CE48488CA}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EB0DECC8-9A1F-4C48-B90F-0DF46A160533}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BRS_Camera_D50_ShutterClick4" ID="{B22E12C9-C9A4-4785-81DB-5A3567B6FC13}">
+							<Language>SFX</Language>
+							<AudioFile>BRS_Camera_D50_ShutterClick4.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="132429768"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="BRS_Camera_D50_ShutterClick4" ID="{B22E12C9-C9A4-4785-81DB-5A3567B6FC13}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

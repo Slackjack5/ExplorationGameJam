@@ -1,6 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
 	152278570	Play_GrivanceZones			\Default Work Unit\Play_GrivanceZones	
+	1607971162	Play_Equip			\Default Work Unit\Play_Equip	
 	1750065161	Play_Spooky			\Default Work Unit\Play_Spooky	
+	1928751031	Play_Camera			\Default Work Unit\Play_Camera	
 	2376328173	Monster			\Default Work Unit\Monster	
 	2822502029	Play_Pad			\Default Work Unit\Play_Pad	
 	2868361841	Fade_AmbienceUp			\Default Work Unit\Fade_AmbienceUp	
@@ -27,6 +29,7 @@ Switch	ID	Name	Switch Group			Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	61567263	AmbientPad	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\AmbientPad_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\AmbientPad		5644864
+	132429768	BRS_Camera_D50_ShutterClick4	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\BRS_Camera_D50_ShutterClick4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\BRS_Camera_D50_ShutterClick4		71744
 	191303793	Grieving1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleGrieving\Grieving1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving1		7177896
 	252929353	PianoMelody1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\PianoMelody1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Music Playlist\PianoMelody1\PianoMelody1		5821264
 	378455918	Grieving5	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleGrieving\Grieving5_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving5		7306304
@@ -37,6 +40,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	708473194	MonsterBaseNoise	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\MonsterBaseNoise_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterBaseNoise		4365964
 	761609339	SpookyAmbience3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\SpookyAmbience3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\SpookyAmbience\SpookyAmbience3		3704464
 	796043547	Grieving4	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleGrieving\Grieving4_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving4		6831920
+	800780477	ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_A6F1DE9B.wem		\Actor-Mixer Hierarchy\Default Work Unit\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot		336144
 	848869919	SpookyAmbience1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\SpookyAmbience1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\SpookyAmbience\SpookyAmbience1		2331512
 	876664076	Grieving3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleGrieving\Grieving3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving3		6451744
 	899522019	Grieving2	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Mac\SFX\FemaleGrieving\Grieving2_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving2		7375940

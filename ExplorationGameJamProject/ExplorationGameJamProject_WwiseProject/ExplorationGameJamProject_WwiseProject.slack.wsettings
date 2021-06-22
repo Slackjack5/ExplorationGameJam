@@ -3,7 +3,9 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{532042FC-8E1E-40EA-AF81-29B3FB4B6774}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="G:\Ableton\Audio\MusicClips\Music\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="G:\Ableton\Audio\"/>
+				<Property Name="Event Action List\{0E400817-A155-4AA9-B9C2-3C99CED91FA3}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{13D21B42-F6B5-49CB-B31E-C0CCE59D2712}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{145EB7F4-3C76-491E-B31C-B587799C6466}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1D9358A3-0C1A-46AE-A98C-21BCFCD6F732}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{26839807-C9D1-449A-89C3-048A7417A4D9}\x64_Expand States" Type="string" Value=""/>
@@ -15,8 +17,10 @@
 				<Property Name="Event Action List\{5DAC1BB7-69E8-49F0-AA8A-25D00F288385}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{60BCBE99-9EFF-4731-B91A-8729EA710468}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{76BE77FC-18D9-4DE2-950B-81E39191D5B4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7F707FCD-415B-4D12-AB79-3C41C35A5FD7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{848F122C-29A4-4163-A003-95F8BA18884C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{865E754C-7254-4B94-BA16-FE104277CCA7}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{92B739F0-E972-4CDC-8CD8-E4E7BF14EFB4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9BB80A57-2A2F-4AF5-A8A2-3F71C6DDC5DB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{A8AE8B0B-8D79-4F84-BBE2-7D06D45C9E82}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D569164F-A687-4437-A2A3-8CFA533BA59B}\x64_Expand States" Type="string" Value=""/>
@@ -42,7 +46,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="lfVnX6OZYECDmQJLFZ7lHjcJIYx0HaNKgC9PeZdYGpg="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="ofhNhk17Fka5FyXLoDrgK2mFztsrqeZEsODbpXw+2wU="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="TGAhbrF4U0aliqtlHW0ysgHvySv/////br9AUQE92EOydalAieOreQHvySv/////"/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="br9AUQE92EOydalAieOreQHvGTT/////TGAhbrF4U0aliqtlHW0ysgHvGTT/////"/>
 				<Property Name="Interactive Music\x64_{426933CE-2DAA-4D0F-ACF7-D87C2AECB3BE} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP0/Byyl4OS9AAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{74D0BD5B-14D7-4A79-AEF5-B58DD5672AC8} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP93m/JOzly1AAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{79837CB2-40EB-4423-A6DD-03EA7AF228B7} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP+miiy666D5AAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
@@ -59,7 +63,7 @@
 				<Property Name="Music Transition List\{7B5AB62F-B4F4-45B4-A661-65631EFBD752}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_12_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
-				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{72252D64-91FD-4DAA-9157-69757C8650E0}"/>
+				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}"/>
 				<Property Name="ProjectExplorer\FirstVisible_4_1" Type="string" Value="{A69BF0FC-D84A-487C-ABDD-56F71CB2A126}"/>
 				<Property Name="ProjectExplorer\FirstVisible_5_1" Type="string" Value="{CB6175F1-6080-4A23-92EF-0807E304D0C1}"/>
 				<Property Name="ProjectExplorer\FirstVisible_7_1" Type="string" Value="{C98E673F-A24C-48A8-960F-10565FFE70A0}"/>

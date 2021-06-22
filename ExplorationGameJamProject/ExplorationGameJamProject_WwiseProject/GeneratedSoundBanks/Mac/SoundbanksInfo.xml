@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="4222856481">
+		<SoundBank Id="77978275" Language="SFX" Hash="2800810468">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
@@ -27,6 +27,22 @@
 						<File Id="708473194" Language="SFX">
 							<ShortName>MonsterBaseNoise.wav</ShortName>
 							<Path>SFX\MonsterBaseNoise_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1928751031" Name="Play_Camera" ObjectPath="\Events\Default Work Unit\Play_Camera" DurationType="OneShot" DurationMin="0.362016" DurationMax="0.456112">
+					<IncludedMemoryFiles>
+						<File Id="132429768" Language="SFX">
+							<ShortName>BRS_Camera_D50_ShutterClick4.wav</ShortName>
+							<Path>SFX\BRS_Camera_D50_ShutterClick4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1607971162" Name="Play_Equip" ObjectPath="\Events\Default Work Unit\Play_Equip" DurationType="OneShot" DurationMin="1.559073" DurationMax="1.964309">
+					<IncludedMemoryFiles>
+						<File Id="800780477" Language="SFX">
+							<ShortName>ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot.wav</ShortName>
+							<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_A6F1DE9B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -148,6 +164,16 @@
 				</Event>
 				<Event Id="3444384738" Name="Stop_Playlist" ObjectPath="\Events\Default Work Unit\Stop_Playlist" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="132429768" Language="SFX">
+					<ShortName>BRS_Camera_D50_ShutterClick4.wav</ShortName>
+					<Path>SFX\BRS_Camera_D50_ShutterClick4_10C4C929.wem</Path>
+				</File>
+				<File Id="800780477" Language="SFX">
+					<ShortName>ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot.wav</ShortName>
+					<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_A6F1DE9B.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 			<SwitchGroups>
 				<SwitchGroup Id="109497315" Name="GrievingZones" ObjectPath="\Switches\Default Work Unit\GrievingZones">
 					<Switches>
