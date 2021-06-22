@@ -4,6 +4,12 @@ Event	ID	Name			Wwise Object Path	Notes
 	2376328173	Monster			\Default Work Unit\Monster	
 	2822502029	Play_Pad			\Default Work Unit\Play_Pad	
 	2868361841	Fade_AmbienceUp			\Default Work Unit\Fade_AmbienceUp	
+	3257725848	Play_Grieving3			\Default Work Unit\Play_Grieving3	
+	3257725849	Play_Grieving2			\Default Work Unit\Play_Grieving2	
+	3257725850	Play_Grieving1			\Default Work Unit\Play_Grieving1	
+	3257725853	Play_Grieving6			\Default Work Unit\Play_Grieving6	
+	3257725854	Play_Grieving5			\Default Work Unit\Play_Grieving5	
+	3257725855	Play_Grieving4			\Default Work Unit\Play_Grieving4	
 	3382723624	Play_RandomMusic			\Default Work Unit\Play_RandomMusic	
 	3444384738	Stop_Playlist			\Default Work Unit\Stop_Playlist	
 	3726615666	Fade_AmbienceDown			\Default Work Unit\Fade_AmbienceDown	
@@ -21,18 +27,18 @@ Switch	ID	Name	Switch Group			Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	61567263	AmbientPad	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\AmbientPad_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\AmbientPad		5644864
-	191303793	Grieving1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving1		7177896
+	191303793	Grieving1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving1		7177896
 	252929353	PianoMelody1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\PianoMelody1_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Music Playlist\PianoMelody1\PianoMelody1		5821264
-	378455918	Grieving5	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving5		7306304
-	393580908	Grieving6	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving6		7316344
+	378455918	Grieving5	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving5_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving5		7306304
+	393580908	Grieving6	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving6_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving6		7316344
 	461575458	FemaleVocalLoop	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleVocalLoop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\FemaleVocalLoop		7408868
 	583963047	PianoMelody3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\PianoMelody3_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Music Playlist\PianoMelody3\PianoMelody3		11524864
 	648754630	SpookyAmbience2	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\SpookyAmbience2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\SpookyAmbience\SpookyAmbience2		4348132
 	708473194	MonsterBaseNoise	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\MonsterBaseNoise_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\MonsterBaseNoise		4365964
 	761609339	SpookyAmbience3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\SpookyAmbience3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\SpookyAmbience\SpookyAmbience3		3704464
-	796043547	Grieving4	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving4		6831920
+	796043547	Grieving4	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving4_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving4		6831920
 	848869919	SpookyAmbience1	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\SpookyAmbience1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\SpookyAmbience\SpookyAmbience1		2331512
-	876664076	Grieving3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving3		6451744
-	899522019	Grieving2	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving2		7375940
+	876664076	Grieving3	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving3		6451744
+	899522019	Grieving2	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\FemaleGrieving\Grieving2_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrivanceZones\Grieving2		7375940
 	900572521	PianoMelody2	E:\GitKraken\ExplorationGame2\ExplorationGameJam\ExplorationGameJamProject\ExplorationGameJamProject_WwiseProject\.cache\Windows\SFX\PianoMelody2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Music Playlist\PianoMelody2\PianoMelody2		12160408
 

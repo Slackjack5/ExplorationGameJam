@@ -160,6 +160,72 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Grieving1" ID="{F730A7B9-578B-433E-B624-5DAB3D552376}">
+					<ChildrenList>
+						<Action Name="" ID="{70BE1B6F-3F37-4F53-82E4-74B043D4A274}" ShortID="921999671">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving1" ID="{AF23CA58-B246-4626-B7D0-482BE77059C1}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Grieving2" ID="{145EB7F4-3C76-491E-B31C-B587799C6466}">
+					<ChildrenList>
+						<Action Name="" ID="{A7DF529D-9F36-4AD6-AA4C-9919FAC243A5}" ShortID="167988598">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving2" ID="{6EA23BFB-893A-4466-85CF-B59EE686601F}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Grieving3" ID="{3B0D2AAD-A156-4A46-86ED-ECB862B05CF5}">
+					<ChildrenList>
+						<Action Name="" ID="{A77EC49E-EFC8-40B5-BD29-DB1F2B6E3C50}" ShortID="544663546">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving3" ID="{9D382353-A566-4750-A1D5-D6D0E5130147}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Grieving4" ID="{76BE77FC-18D9-4DE2-950B-81E39191D5B4}">
+					<ChildrenList>
+						<Action Name="" ID="{65E2EC20-1B20-426B-8C26-0428AD53BFB6}" ShortID="923074790">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving4" ID="{217E02E0-99B2-4F17-A5F6-B1629E457D43}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Grieving5" ID="{848F122C-29A4-4163-A003-95F8BA18884C}">
+					<ChildrenList>
+						<Action Name="" ID="{CFA27EA0-BE57-407A-AE5C-5AEE643A9B49}" ShortID="812202942">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving5" ID="{18600A29-78E4-4E6A-9CC7-F451F7CA6D3A}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Grieving6" ID="{52F2CD31-5439-4791-8B89-B51C80AD9C87}">
+					<ChildrenList>
+						<Action Name="" ID="{4E07E160-7DB3-4E3F-AFC2-60F8F1414583}" ShortID="1045244117">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grieving6" ID="{1E3741EF-70D2-4CEC-A517-E63071CA8F9B}" WorkUnitID="{BAEC3D78-C5A3-428B-8AA4-C43ED791037D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

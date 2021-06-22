@@ -17,6 +17,12 @@ namespace AK
         static const AkUniqueID FADE_AMBIENCEUP = 2868361841U;
         static const AkUniqueID MONSTER = 2376328173U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
+        static const AkUniqueID PLAY_GRIEVING1 = 3257725850U;
+        static const AkUniqueID PLAY_GRIEVING2 = 3257725849U;
+        static const AkUniqueID PLAY_GRIEVING3 = 3257725848U;
+        static const AkUniqueID PLAY_GRIEVING4 = 3257725855U;
+        static const AkUniqueID PLAY_GRIEVING5 = 3257725854U;
+        static const AkUniqueID PLAY_GRIEVING6 = 3257725853U;
         static const AkUniqueID PLAY_GRIVANCEZONES = 152278570U;
         static const AkUniqueID PLAY_PAD = 2822502029U;
         static const AkUniqueID PLAY_RANDOMMUSIC = 3382723624U;
@@ -74,6 +80,7 @@ namespace AK
         static const AkUniqueID ENVIRONMENT = 1229948536U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID VOICES = 3313685232U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

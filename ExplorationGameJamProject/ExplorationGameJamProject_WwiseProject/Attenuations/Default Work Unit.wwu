@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<Attenuation Name="Monster" ID="{BED938D1-A031-4646-B502-3AFE4595C273}" ShortID="972871034">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="20"/>
+						<Property Name="RadiusMax" Type="Real64" Value="10"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -21,12 +21,12 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>6.0567</XPos>
+											<XPos>3.02835</XPos>
 											<YPos>-8.60939</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>20</XPos>
+											<XPos>10</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -53,12 +53,12 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>10.05154</XPos>
+											<XPos>5.02577</XPos>
 											<YPos>36</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>20</XPos>
+											<XPos>10</XPos>
 											<YPos>50</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -78,6 +78,9 @@
 					</CurveUsageInfoList>
 				</Attenuation>
 				<Attenuation Name="GrievanceZones" ID="{912C17BC-C2B5-45CB-899D-984491B38ABB}" ShortID="250806653">
+					<PropertyList>
+						<Property Name="RadiusMax" Type="Real64" Value="15"/>
+					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
 							<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
@@ -92,12 +95,12 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>27.96392</XPos>
-											<YPos>-10.12093</YPos>
+											<XPos>5.02577</XPos>
+											<YPos>-12.43426</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>100</XPos>
+											<XPos>15</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -124,12 +127,12 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>50.25774</XPos>
+											<XPos>7.538661</XPos>
 											<YPos>29</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>100</XPos>
+											<XPos>15</XPos>
 											<YPos>41</YPos>
 											<Flags>37</Flags>
 										</Point>

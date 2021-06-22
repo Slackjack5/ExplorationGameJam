@@ -51,7 +51,7 @@
 												<PointList>
 													<Point>
 														<XPos>-48</XPos>
-														<YPos>-0</YPos>
+														<YPos>0</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -71,6 +71,14 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Voices" ID="{77A77FDF-E82D-47DA-AF9E-1CFA810DD716}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+									<ObjectRef Name="Sidechain_Meter" ID="{9F8C6994-1433-45FA-8388-2082B4EAC6A5}" WorkUnitID="{A4679384-75A0-4F44-90ED-6CAB4193B6CD}"/>
+								</Reference>
+							</ReferenceList>
 							<ObjectLists/>
 						</Bus>
 					</ChildrenList>
