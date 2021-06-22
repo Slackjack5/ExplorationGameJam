@@ -235,7 +235,7 @@ public class PlayerController : MonoBehaviour
     //Footstep audio
     distanceTravelled = Vector3.Distance(transform.position, lastPosition);
     lastPosition = transform.position;
-    Debug.Log(distanceTravelled);
+
     if (characterController.velocity.magnitude >= .1f && playingFootstep == false)
     {
       if (distanceTravelled >= .04)
