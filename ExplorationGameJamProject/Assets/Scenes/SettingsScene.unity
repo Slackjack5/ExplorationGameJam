@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faint Memories
+  m_text: Faint Memory
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19bd4f4403dd3f34680f26f8ea629678, type: 2}
   m_sharedMaterial: {fileID: 3801156138071075675, guid: 19bd4f4403dd3f34680f26f8ea629678, type: 2}
