@@ -441,6 +441,10 @@ public class PlayerController : MonoBehaviour
     {
       helpTextManager.ShowOpenInventoryText();
     }
+    else if (!helpTextManager.IsSelectPhotoComplete && helpTextManager.IsOpenInventoryComplete)
+    {
+      helpTextManager.ShowSelectPhotoText();
+    }
     else if (!helpTextManager.IsCaptureEnemyComplete && gameCamera.IsSeeingEnemy && helpTextManager.IsOpenInventoryComplete)
     {
       helpTextManager.ShowCaptureEnemyText();
