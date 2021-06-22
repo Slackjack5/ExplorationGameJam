@@ -11,14 +11,14 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="2800810468">
+		<SoundBank Id="77978275" Language="SFX" Hash="1562013982">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3726615666" Name="Fade_AmbienceDown" ObjectPath="\Events\Default Work Unit\Fade_AmbienceDown" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2868361841" Name="Fade_AmbienceUp" ObjectPath="\Events\Default Work Unit\Fade_AmbienceUp" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2376328173" Name="Monster" ObjectPath="\Events\Default Work Unit\Monster" MaxAttenuation="10.000000" DurationType="Infinite">
+				<Event Id="2376328173" Name="Monster" ObjectPath="\Events\Default Work Unit\Monster" MaxAttenuation="8.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="461575458" Language="SFX">
 							<ShortName>FemaleVocalLoop.wav</ShortName>
@@ -42,7 +42,7 @@
 					<IncludedMemoryFiles>
 						<File Id="800780477" Language="SFX">
 							<ShortName>ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot.wav</ShortName>
-							<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_A6F1DE9B.wem</Path>
+							<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_136EC449.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -171,7 +171,7 @@
 				</File>
 				<File Id="800780477" Language="SFX">
 					<ShortName>ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot.wav</ShortName>
-					<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_A6F1DE9B.wem</Path>
+					<Path>SFX\ESM_Battle_Game_Weapon_Foley_Gun_Handling_Equip_Pick_Up_1_One_Shot_136EC449.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<SwitchGroups>
