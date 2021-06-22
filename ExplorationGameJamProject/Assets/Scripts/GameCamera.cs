@@ -11,6 +11,7 @@ public class GameCamera : MonoBehaviour
   [SerializeField] private GameObject invalidPhotoPanel;
   [SerializeField] private GameObject validPhotoPanel;
   [SerializeField] private GameObject checkmarkCanvas;
+  [SerializeField] private GameObject helpCanvas;
   [SerializeField] private Enemy enemy;
   [SerializeField] private LayerMask whatIsEnemy;
   [SerializeField] private LayerMask whatIsMemory;
@@ -27,7 +28,12 @@ public class GameCamera : MonoBehaviour
     get { return cameraCanvas.activeSelf; }
   }
 
-  private bool IsValidPhoto
+  public bool IsSeeingEnemy
+  {
+    get { return Physics.Raycast(Utils.GetLookRay(playerCamera), out RaycastHit hit, maxMemoryCaptureDistance, whatIsEnemy); }
+  }
+
+  public bool IsValidPhoto
   {
     get { return validPhotoPanel.activeSelf; }
   }
@@ -75,8 +81,10 @@ public class GameCamera : MonoBehaviour
           enemy.Respawn();
         }
 
-        // Disable the camera UI so that it doesn't appear in screenshot
+        // Disable the camera and help text UI so that it doesn't appear in screenshot
         cameraCanvas.SetActive(false);
+        helpCanvas.SetActive(false);
+
         Vector3 location = GetLocation(lookRay);
         if (location != Vector3.zero)
         {
@@ -107,6 +115,7 @@ public class GameCamera : MonoBehaviour
     inventory.AddPhoto(sprite, GetLocation(lookRay));
 
     cameraCanvas.SetActive(true);
+    helpCanvas.SetActive(true);
     checkmarkCanvas.SetActive(false);
   }
 
