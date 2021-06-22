@@ -52,9 +52,13 @@ public class PlayerController : MonoBehaviour
 
   //Audio Timer
   private bool playingFootstep = false;
+  private float distanceTravelled = 0;
+  private Vector3 lastPosition;
 
-  // Start is called before the first frame update
-  void Start()
+
+
+    // Start is called before the first frame update
+    void Start()
   {
     // Load in bloom and colorAdjustment component
     volume.profile.TryGet<Bloom>(out bloom);
@@ -82,7 +86,8 @@ public class PlayerController : MonoBehaviour
     Cursor.lockState = CursorLockMode.Locked;
 
     cameraPivot.SetActive(false);
-  }
+    lastPosition = transform.position;
+    }
 
   // Update is called once per frame
   void Update()
@@ -215,9 +220,16 @@ public class PlayerController : MonoBehaviour
     characterController.Move(currentVelocity);
 
     //Footstep audio
+    distanceTravelled = Vector3.Distance(transform.position, lastPosition);
+    lastPosition = transform.position;
+        Debug.Log(distanceTravelled);
     if (characterController.velocity.magnitude >= .1f && playingFootstep == false)
     {
-      AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
+       if(distanceTravelled>=.04)
+            {
+                AkSoundEngine.PostEvent("Play_Footsteps", this.gameObject);
+            }
+      
       StartCoroutine(NextFootstep());
       playingFootstep = true;
     }

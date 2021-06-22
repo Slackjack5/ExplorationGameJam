@@ -65,6 +65,8 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID AUDIO_DUCKING = 954015593U;
+        static const AkUniqueID MASTER_VOLUME = 4179668880U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

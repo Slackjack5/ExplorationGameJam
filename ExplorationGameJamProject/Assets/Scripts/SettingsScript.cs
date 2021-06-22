@@ -22,10 +22,12 @@ public class SettingsScript : MonoBehaviour
   public void OnMusicChange(float value)
   {
     Settings.musicVolume = value;
+        AkSoundEngine.SetRTPCValue("Music_Volume", value*100);
   }
 
   public void OnSoundChange(float value)
   {
     Settings.soundVolume = value;
+        AkSoundEngine.SetRTPCValue("Master_Volume", value * 100);
   }
 }

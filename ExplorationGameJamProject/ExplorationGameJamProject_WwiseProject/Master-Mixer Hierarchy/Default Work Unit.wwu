@@ -4,6 +4,36 @@
 		<WorkUnit Name="Default Work Unit" ID="{575EC0E5-6F85-4776-BB01-1EE973D07DC2}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{04AC117F-1F07-4F5B-97FE-74B2CF023A11}" ShortID="395377042">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Master_Volume" ID="{2C7C27C8-21AA-4768-8EE6-3A9B85C9EF6F}" WorkUnitID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{CEDA93FA-19B1-4741-82DA-05E010AEA984}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{72252D64-91FD-4DAA-9157-69757C8650E0}" WorkUnitID="{D05257A1-EF62-4F90-8BCD-135E698AAA3C}"/>
@@ -27,6 +57,36 @@
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="Music" ID="{D4793707-44CC-44E4-8355-E02EE127285C}">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{00FE0441-8ACD-4C15-B07C-34AC3A91F0CF}" ShortID="1034918026">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Music_Volume" ID="{3E9D7BFD-EA8C-4B27-A77D-414DBB84425E}" WorkUnitID="{C4E09835-FA2D-4D89-84AE-3F0E01B1CDBB}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F629332F-B3B1-4494-9CD3-3976C4A003A7}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Effect0" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 									<ObjectRef Name="Sidechain_Meter" ID="{9F8C6994-1433-45FA-8388-2082B4EAC6A5}" WorkUnitID="{A4679384-75A0-4F44-90ED-6CAB4193B6CD}"/>

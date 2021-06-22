@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="77978275" Language="SFX" Hash="3160956247">
+		<SoundBank Id="77978275" Language="SFX" Hash="4222856481">
 			<ObjectPath>\SoundBanks\Default Work Unit\Ambient</ObjectPath>
 			<ShortName>Ambient</ShortName>
 			<Path>Ambient.bnk</Path>
@@ -161,7 +161,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="854877826">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2562523344">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -170,6 +170,8 @@
 			</IncludedAuxBusses>
 			<GameParameters>
 				<GameParameter Id="954015593" Name="Audio_Ducking" ObjectPath="\Game Parameters\Default Work Unit\Audio_Ducking"/>
+				<GameParameter Id="1006694123" Name="Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\Music_Volume"/>
+				<GameParameter Id="4179668880" Name="Master_Volume" ObjectPath="\Game Parameters\Default Work Unit\Master_Volume"/>
 			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="2385628198" Language="SFX" Hash="2661456178">

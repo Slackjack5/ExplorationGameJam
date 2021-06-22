@@ -1,5 +1,7 @@
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	954015593	Audio_Ducking			\Default Work Unit\Audio_Ducking	
+	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
+	4179668880	Master_Volume			\Default Work Unit\Master_Volume	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
