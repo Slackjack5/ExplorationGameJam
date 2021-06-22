@@ -7,7 +7,7 @@ public class MenuScript : MonoBehaviour
 {
   public void LoadScene(string scene)
   {
-    if (scene == "AljonScene")
+    if (scene == "MainScene")
     {
       Vector3 offmap = new Vector3(9999999, 9999999, 9999999);
       Shader.SetGlobalVector("_Point1", offmap);
