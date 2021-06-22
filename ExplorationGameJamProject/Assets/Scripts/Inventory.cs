@@ -123,7 +123,7 @@ public class Inventory : MonoBehaviour
     }
     else
     {
-      if (photoHasBeenSelected)
+      if (photoHasBeenSelected && selectedPhotoPos != Vector3.zero)
       {
         Shader.SetGlobalVector("_PhotoPoint", selectedPhotoPos);
         Shader.SetGlobalFloat("_PhotoPointTime", Time.time);
