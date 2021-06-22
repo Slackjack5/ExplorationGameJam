@@ -171,20 +171,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "111c583238694aa09f070ab4cd027179"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "7800f04d3faf443ebc6910687474be0c"
-                },
-                "m_SlotId": -678601550
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "15425575e6ef4d4bbf405e71a270759c"
                 },
                 "m_SlotId": 0
@@ -1541,6 +1527,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "3c27e6293efc485d826d7fa3a03b3658",
+    "m_Id": 1300565945,
+    "m_DisplayName": "PhotoPoint",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Vector3_be6d7c0646fe4bdb81b6f2a4b45ab6d7",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "3ce5fcd9d5e540368a22da49bbf4a750",
     "m_Id": 0,
@@ -2303,7 +2312,7 @@
             "m_Id": "6993825bfa534b59b1d0e25a77ecdb8a"
         },
         {
-            "m_Id": "dbb2df03b5eb49608a317025e1d84dc5"
+            "m_Id": "3c27e6293efc485d826d7fa3a03b3658"
         },
         {
             "m_Id": "a4aeb12d91914c17a34fe9ff57ae879a"
@@ -2326,7 +2335,8 @@
         "d1609c65-7bc8-40e1-adc1-1e12bf0656d0",
         "bce77635-f3b9-4d3e-8d73-8dbfd0ec4701",
         "4e04bb6a-d9a2-4acf-b8a7-8b5e4450922d",
-        "5a171ea2-f09a-42f6-9aa3-7d875f89cae6"
+        "5a171ea2-f09a-42f6-9aa3-7d875f89cae6",
+        "03ec4f15-cc69-40bd-acea-826abcd7c011"
     ],
     "m_PropertyIds": [
         938043914,
@@ -2337,7 +2347,8 @@
         -1264001964,
         -1034011894,
         480702856,
-        -678601550
+        -678601550,
+        1300565945
     ]
 }
 
@@ -3396,21 +3407,6 @@
         "m_SerializableColors": []
     },
     "m_Space": 0
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "dbb2df03b5eb49608a317025e1d84dc5",
-    "m_Id": -678601550,
-    "m_DisplayName": "PhotoPoint",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Vector1_8ffbc6c1de784a72a066dbb93b924ba4",
-    "m_StageCapability": 2,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
 }
 
 {
