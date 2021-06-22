@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
   // Unity Editor fields
   [SerializeField] private Camera playerCamera;
+  [SerializeField] private LayerMask whatIsCamera;
   [SerializeField] private LayerMask whatIsInteractable;
   [SerializeField] private string memoryArea = "Memory Area";
   [SerializeField] private float baseSpeed = 6f;
@@ -36,10 +37,12 @@ public class PlayerController : MonoBehaviour
   private float initialFadeTime;
   private ColorAdjustments colorAdjustments;
   private InputAction action;
+  private bool isCameraPickedUp;
 
   // Components
   private CharacterController characterController;
   private GameCamera gameCamera;
+  private HelpTextManager helpTextManager;
   private Inventory inventory;
 
   // Shader stuff
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
     // Initialize components
     characterController = GetComponent<CharacterController>();
     gameCamera = GetComponent<GameCamera>();
+    helpTextManager = GetComponent<HelpTextManager>();
     inventory = GetComponent<Inventory>();
 
 
@@ -183,7 +187,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Highlight interactable objects that are looked at
-    if (IsSeeingInteractable(out RaycastHit hit))
+    if (IsSeeingInteractable(out RaycastHit hit) || Physics.Raycast(Utils.GetLookRay(playerCamera), out hit, maxInteractDistance, whatIsCamera))
     {
       Highlight(hit);
     }
@@ -191,6 +195,8 @@ public class PlayerController : MonoBehaviour
     {
       ClearHighlight();
     }
+
+    ShowHelpText();
   }
 
   private void FixedUpdate()
@@ -254,8 +260,20 @@ public class PlayerController : MonoBehaviour
 
   public void OnFire()
   {
-    if (!pauseMenu.activeSelf)
+    if (!pauseMenu.activeSelf && isCameraPickedUp)
     {
+      if (gameCamera.IsEquipped && gameCamera.IsValidPhoto && !helpTextManager.IsTakePhotoComplete)
+      {
+        helpTextManager.IsTakePhotoComplete = true;
+        helpTextManager.RemoveText();
+      }
+
+      if (gameCamera.IsSeeingEnemy && !helpTextManager.IsCaptureEnemyComplete)
+      {
+        helpTextManager.IsCaptureEnemyComplete = true;
+        helpTextManager.RemoveText();
+      }
+
       gameCamera.TakePhoto();
     }
   }
@@ -270,6 +288,14 @@ public class PlayerController : MonoBehaviour
         inventory.IncreaseCapacity();
         hit.transform.gameObject.GetComponent<Interactable>().Interact();
       }
+    }
+    else if (Physics.Raycast(Utils.GetLookRay(playerCamera), out hit, maxInteractDistance, whatIsCamera))
+    {
+      helpTextManager.IsInteractComplete = true;
+      helpTextManager.RemoveText();
+
+      isCameraPickedUp = true;
+      Destroy(hit.transform.gameObject);
     }
   }
 
@@ -289,16 +315,28 @@ public class PlayerController : MonoBehaviour
 
   public void OnOpenInventory()
   {
-    if (!pauseMenu.activeSelf)
+    if (!pauseMenu.activeSelf && isCameraPickedUp)
     {
+      if (!helpTextManager.IsOpenInventoryComplete && helpTextManager.IsTakePhotoComplete)
+      {
+        helpTextManager.IsOpenInventoryComplete = true;
+        helpTextManager.RemoveText();
+      }
+
       inventory.Toggle();
     }
   }
 
   public void OnSecondaryFire()
   {
-    if (IsGameActive())
+    if (IsGameActive() && isCameraPickedUp)
     {
+      if (!helpTextManager.IsEquipCameraComplete)
+      {
+        helpTextManager.IsEquipCameraComplete = true;
+        helpTextManager.RemoveText();
+      }
+
       if (!gameCamera.IsEquipped)
       {
         // Animate equipping of camera
@@ -346,5 +384,29 @@ public class PlayerController : MonoBehaviour
   {
     deathTime = Time.time;
     hasJustDied = true;
+  }
+
+  private void ShowHelpText()
+  {
+    if (!helpTextManager.IsInteractComplete && Physics.Raycast(Utils.GetLookRay(playerCamera), out RaycastHit hit, maxInteractDistance, whatIsCamera))
+    {
+      helpTextManager.ShowInteractText();
+    }
+    else if (!helpTextManager.IsEquipCameraComplete && isCameraPickedUp && helpTextManager.IsInteractComplete)
+    {
+      helpTextManager.ShowEquipCameraText();
+    }
+    else if (!helpTextManager.IsTakePhotoComplete && gameCamera.IsValidPhoto && helpTextManager.IsEquipCameraComplete)
+    {
+      helpTextManager.ShowTakePhotoText();
+    }
+    else if (!helpTextManager.IsOpenInventoryComplete && helpTextManager.IsTakePhotoComplete)
+    {
+      helpTextManager.ShowOpenInventoryText();
+    }
+    else if (!helpTextManager.IsCaptureEnemyComplete && gameCamera.IsSeeingEnemy && helpTextManager.IsOpenInventoryComplete)
+    {
+      helpTextManager.ShowCaptureEnemyText();
+    }
   }
 }
